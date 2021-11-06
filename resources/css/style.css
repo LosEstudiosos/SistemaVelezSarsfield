@@ -1,0 +1,24 @@
+.r{
+    background: rgba(42, 69, 165, 1);
+    z-index: 1;
+}
+
+.b{
+    border-radius: 20px;
+}
+.bt-r{
+    border-radius:10px;
+}
+
+.b-i{
+    border-style: solid;
+}
+
+.bu{
+    text-decoration: none;
+}
+.bu:hover{
+    text-decoration: underline;
+    background-color:rgba(1, 200, 200, 1);
+}
+
