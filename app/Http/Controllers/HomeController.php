@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function __invoke(){
+        return view('login');
+    }
+
+    public function home(){
         return view('home');
     }
 }

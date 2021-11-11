@@ -16,6 +16,7 @@ use App\Http\Controllers\UsuariosController;
 */
 
 Route::get('/', HomeController::class);
-Route::get('usuarios', [UsuariosController::class, 'index']);
+Route::get('/home', [HomeController::class, 'home']);
+Route::get('usuarios', [UsuariosController::class, 'listar']);
 Route::get('usuarios/registrar', [UsuariosController::class, 'registrar']);
 Route::get('usuarios/modificar', [UsuariosController::class, 'modificar']);

@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        //se llama las clases seeders para autogenerar los datos
+        $this->call(UsuarioSeeder::class);
     }
 }
