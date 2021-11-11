@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Iniciar sesión</title>
     <link href="/SistemaVelezSarsfield/resources/css/bootstrap.min.css" rel="stylesheet" >
     <link href="/SistemaVelezSarsfield/resources/js/bootstrap.min.js" rel="stylesheet" >
     <link href="/SistemaVelezSarsfield/resources/css/style.css" rel="stylesheet">
+    <!-- favicon -->
+    <link href="/SistemaVelezSarsfield/resources/ico/escudo.ico" rel="shortcut icon">
+    <!-- estilos -->
 </head>
 <body>
     <div class="container-fluid" style="background: rgba(42, 69, 165, 1);">
@@ -17,7 +20,7 @@
                     <img src="/SistemaVelezSarsfield/resources/img/logo.png" alt="">
                 </div>
                 <div class="mb-4 card-title text-center border-button">
-                    <h2 class="justify-content-center">Inicio de sesion</h2>
+                    <h2 class="justify-content-center">Inicio de sesión</h2>
                 </div>
                 <form class="bg-secondary b border border-5" action="login.php" method="POST">
                     <div class="row justify-content-center">
@@ -34,10 +37,10 @@
                 </form>
                 <div class="row justify-content-center border-0">
                     <div class="col-12 text-center my-2">
-                        <a href="#" class="link-primary">¿Olvido su usuario y/o contraseña?</a>
+                        <a href="#" class="link-primary">¿Olvidó su usuario y/o contraseña?</a>
                     </div>
                     <div class="col text-center mb-3">
-                        <a href="#" class="link-primary">No tenes cuenta</a>
+                        <a href="#" class="link-primary">No tenés cuenta</a>
                     </div>
                 </div>
             </div>
