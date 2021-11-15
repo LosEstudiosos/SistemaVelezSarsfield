@@ -5,7 +5,7 @@ Crea una Migracion de tipo CREATE en base a la Convención estandar
 php artisan make:migration create_[NombreTabla]_table
 
 Crea una Migracion de tipo ALTER TABLE en base a la Convención estandar
-php artisan make:migration create_[NombreTabla]_table
+php artisan make:migration add_[Tipo&ExplicacionAlter]_To_[NombreTabla]
 
 Crea un Seeder(Insertador de Datos) en base a la Convención estandar
 php artisan make:seeder [NombreObjeto]Seeder
