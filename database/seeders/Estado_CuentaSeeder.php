@@ -15,7 +15,7 @@ class Estado_CuentaSeeder extends Seeder
     public function run()
     {
         $estado = new Estado_Cuenta();
-        $estado->estado = "Activo";
+        $estado->estado = "Activada";
         $estado2 = new Estado_Cuenta();
         $estado2->estado = "Desactivada";
         $estado3 = new Estado_Cuenta();
@@ -24,6 +24,6 @@ class Estado_CuentaSeeder extends Seeder
         $estado->save();
         $estado2->save();
         $estado3->save();        
-        Estado_Cuenta::factory(10)->create();
+        //Estado_Cuenta::factory(10)->create();
     }
 }

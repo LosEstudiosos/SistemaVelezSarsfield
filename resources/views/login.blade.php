@@ -9,7 +9,7 @@
     <link href="/SistemaVelezSarsfield/resources/js/bootstrap.min.js" rel="stylesheet" >
     <link href="/SistemaVelezSarsfield/resources/css/style.css" rel="stylesheet">
     <!-- favicon -->
-    <link href="/SistemaVelezSarsfield/resources/ico/escudo.ico" rel="shortcut icon">
+    <link href="/SistemaVelezSarsfield/resources/img/icons/escudo.ico" rel="shortcut icon">
     <!-- estilos -->
 </head>
 <body>

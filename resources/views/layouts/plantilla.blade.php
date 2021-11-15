@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" >
-    <link href="/SistemaVelezSarsfield/resources/css/bootstrap.min.css" rel="stylesheet" >
-    <link href="/SistemaVelezSarsfield/resources/js/bootstrap.min.js" rel="stylesheet" >
-    <link href="/SistemaVelezSarsfield/resources/css/style.css" rel="stylesheet">
-    <!-- favicon -->
-    <link href="/SistemaVelezSarsfield/resources/ico/escudo.ico" rel="shortcut icon">
-    <!-- estilos -->
+
+    <!-- v--Estilos--v -->
+    <link href="/SistemaVelezSarsfield/resources/css/tailwind.min.css" rel="stylesheet"/>
+    <link href="/SistemaVelezSarsfield/resources/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/SistemaVelezSarsfield/resources/css/all.css" rel="stylesheet"/>
+    <link href="/SistemaVelezSarsfield/resources/css/font-awesome-animation.min.css" rel="stylesheet"/>
+    <link href="/SistemaVelezSarsfield/resources/css/style.css" rel="stylesheet"/>
+    @yield('styles')
+    <!-- ^--Estilos--^ -->
+
+    <!-- v--JavaScripts--v -->
+    <script src="/SistemaVelezSarsfield/resources/js/bootstrap.min.js"></script>
+    <!-- ^--JavaScripts--^ -->
+
+    <!-- v--Favicon--v -->
+    <link href="/SistemaVelezSarsfield/resources/img/icons/escudo.ico" rel="shortcut icon">
+    <!-- ^--vFavicon--^ -->
+   
 </head>
 
 <body class="bg-info">
@@ -40,7 +51,7 @@
     <!-- footer -->
     @yield('footer')
     
-    <div class="text-dark justify-content-center text-center mt-auto pt-5 h5 font-weight-bold">
+    <div class="text-dark justify-content-center text-center mt-4 pt-auto h5 font-weight-bold">
         © Grupo 2 - 2021<br/>
         Canet José Francisco<br/>
         Centurión Sebastián Ignacio<br/>

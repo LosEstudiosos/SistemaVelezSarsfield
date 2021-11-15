@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estado_Cuenta;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class UsuariosController extends Controller
     }
 
     public function listar(){
-        $listaUsuarios = Usuario::paginate();
-        return view('usuarios.listar',compact('listaUsuarios'));
+        $listaUsuarios = Usuario::all();
+        $estados = Estado_Cuenta::all();
+        return view('usuarios.listar',compact('listaUsuarios','estados'));
     }
 }

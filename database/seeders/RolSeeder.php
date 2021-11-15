@@ -19,11 +19,20 @@ class RolSeeder extends Seeder
             $rol2->rol = "Profesor";
             $rol3 = new Rol();
             $rol3->rol = "Preceptor";
+            $rol4 = new Rol();
+            $rol4->rol = "Tutor";
+            $rol5 = new Rol();
+            $rol5->rol = "Directivo";
+            $rol6 = new Rol();
+            $rol6->rol = "Responsable";
 
             $rol->save();
             $rol2->save();
-            $rol3->save();        
-            Rol::factory(10)->create();
+            $rol3->save();  
+            $rol4->save();
+            $rol5->save();
+            $rol6->save();       
+            //Rol::factory(10)->create();
         
     }
 }
