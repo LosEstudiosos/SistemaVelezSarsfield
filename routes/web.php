@@ -16,7 +16,12 @@ use App\Http\Controllers\UsuariosController;
 */
 
 Route::get('/', HomeController::class);
-Route::get('/home', [HomeController::class, 'home']);
-Route::get('usuarios', [UsuariosController::class, 'listar']);
-Route::get('usuarios/registrar', [UsuariosController::class, 'registrar']);
-Route::get('usuarios/modificar', [UsuariosController::class, 'modificar']);
+Route::post('/home', [HomeController::class, 'home'])->name('home');
+Route::get('usuarios', [UsuariosController::class, 'listar'])->name('homeUser');
+Route::get('usuarios/registrar', [UsuariosController::class, 'registrar'])->name('usuarios.registrar');
+Route::post('usuarios/almacenar', [UsuariosController::class, 'almacenar'])->name('usuarios.save');
+Route::post('usuarios/modificar/{id}', [UsuariosController::class, 'modificar'])->name('usuarios.modificar');
+Route::post('usuarios/actualizar', [UsuariosController::class, 'actualizar'])->name('usuarios.update');
+Route::post('usuarios', [UsuariosController::class, 'altabaja'])->name('usuarios.altabaja');
+
+Route::post('usuarios/borrar', [UsuariosController::class, 'borrar'])->name('usuarios.borrar');

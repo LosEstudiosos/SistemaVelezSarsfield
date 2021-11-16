@@ -22,16 +22,17 @@
                 <div class="mb-4 card-title text-center border-button">
                     <h2 class="justify-content-center">Inicio de sesión</h2>
                 </div>
-                <form class="bg-secondary b border border-5" action="login.php" method="POST">
+                <form class="bg-secondary b border border-5" action="{{route('home')}}" method="POST">
+                    @csrf
                     <div class="row justify-content-center">
                         <div class="my-4 col-12 d-flex justify-content-center">
                             <input class="border-3 b-i" type = "text" name="usuario" placeholder="Ingrese su usuario">
                         </div>
                         <div class="mb-4 col-12 d-flex justify-content-center">
-                            <input class="border-3 b-i" type = "password" name="contraseña" placeholder='Ingrese su contraseña'>
+                            <input class="border-3 b-i" type = "password" name="password" placeholder='Ingrese su contraseña'>
                         </div>
                         <div class="mb-3 col-12 d-flex justify-content-center">
-                            <button type="button" class="btn bt-r btn-info">Ingresar</button>    
+                            <button type="submit" class="btn bt-r btn-info">Ingresar</button>    
                         </div>
                     </div>
                 </form>

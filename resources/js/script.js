@@ -1,5 +1,4 @@
-/*var español = $.getJSON( "../resources/json/es_es.json");
-JSon.responseJSON()*/
+/*var español = $.getJSON( "../resources/json/es_es.json").responseJSON;*/
 $(document).ready(function() {
     $('#tabla').DataTable({
         "language":{

@@ -88,8 +88,9 @@
     <div class="row justify-content-center mt-3 mx-0">
         <ul>
             <div class="container">
-                <div class="card">
+                <div class="card" id="card_grilla">
                     <div class="card-body">
+                        @yield('body')
                         <table id="tabla" class="table table-striped align-middle table-bordered mt-auto table-sm text-center">
                             <thead>
                                 <tr class="table-dark">

@@ -7,32 +7,32 @@
 @endsection()
 
 @section('content')
-
 <div class="col-4 bg-white b border border-5 border-dark">
-    <form class="" action="">
+    <form action="{{route('usuarios.update')}}" method="POST">
         <div class="row">
+            @csrf
             <div class="col-12 d-flex justify-content-end mt-3">
-                <input size="4" class="border-3 b-i" type = "text" name="Id" placeholder='Id' value="1"/>
+                <input size="4" class="border-3 b-i" type = "hidden" name="id" placeholder='Id' value="{{$usuario[0]->id}}"/>
             </div>
             <div class="col-6 mt-3">
-                <input class="form-control border-3 b-i" type = "text" name="nombre" placeholder='Nombre'/>
+                <input class="form-control border-3 b-i" type = "text" name="nombre" placeholder='Nombre' value="{{$usuario[0]->nombre}}"/>
             </div>
             <div class="col-6 mt-3">
-                <input class="form-control border-3 b-i" type = "text" name="apellido" placeholder='Apellido'/>
+                <input class="form-control border-3 b-i" type = "text" name="apellido" placeholder='Apellido' value="{{$usuario[0]->apellido}}"/>
             </div>
             <div class="col-6 mt-3">
-                <input class="form-control border-3 b-i" type = "text" name="usuario" placeholder='Usuario'/>
+                <input class="form-control border-3 b-i" type = "text" name="usuario" placeholder='Usuario' value="{{$usuario[0]->usuario}}"/>
             </div>
             <div class="col-6 mt-3">
-                <input class="form-control border-3 b-i" type = "password" name="contraseña" placeholder='Contraseña'/>
+                <input class="form-control border-3 b-i" type = "password" name="password" placeholder='Contraseña' value="{{$usuario[0]->password}}"/>
             </div>
             <div class="col-12 form-floating mt-3">
-                <input id="1" class="form-control border-3 b-i" type = "text" name="nombre usuario" placeholder='nombre de usuario' value="nombre@ejemplo.com"/>
+                <input id="1" class="form-control border-3 b-i" type = "text" name="email" placeholder='Email' value="{{$usuario[0]->email}}"/>
                 <label for="1" class="ms-2">Email</label>
             </div>
             <div class="col-12 mt-3">
                 <select name="Tipo Usuario" class="form-select" id="">
-                    <option selected>Tipo de usuario</option>
+                    <option selected value="0">Tipo de usuario</option>
                     <option value="1">Profesor</option>
                     <option value="2">Alumno</option>
                     <option value="3">Tutor</option>
@@ -45,30 +45,30 @@
             </div>
             <div class="col-12 mt-3">
                 <select name="Tipo Sexo" class="form-select" id="">
-                    <option selected>Tipo de sexo</option>
+                    <option selected value="3">Tipo de sexo</option>
                     <option value="1">Femenino</option>
                     <option value="2">Masculino</option>
                     <option value="3">Otro</option>
                 </select>
             </div>
             <div class="col-8 mt-3">
-                <input class="form-control border-3 b-i" type = "text" name="direccionS" placeholder='Direccion'/>
+                <input class="form-control border-3 b-i" type = "text" name="direccion" placeholder='Direccion'/>
             </div>
             <div class="col-4 mt-3">
                 <input class="form-control border-3 b-i" type = "text" name="numero" placeholder='Numero'/>
             </div>
             <div class="col-12 mt-3">
-                <select name="Tipo Sexo" class="form-select" id="">
+                <select name="pais" class="form-select" id="">
                     <option selected>Pais</option>
                 </select>
             </div>
             <div class="col-12 mt-3">
-                <select name="Tipo Sexo" class="form-select" id="">
+                <select name="provincia" class="form-select" id="">
                     <option selected>Provincia</option>
                 </select>
             </div>
             <div class="col-12 mt-3">
-                <select name="Tipo Sexo" class="form-select" id="">
+                <select name="localidad" class="form-select" id="">
                     <option selected>Localidad</option>
                 </select>
             </div>
@@ -79,13 +79,13 @@
                 <input class="form-control border-3 b-i" type = "text" name="cuil" placeholder='Cuil'/>
             </div>
             <div class="col-12 my-3 d-flex justify-content-center">
-                <button type="button" class="btn bt-r btn-info">Registrar</button>
+                <button type="submit" class="btn bt-r btn-info">Modificar</button>
             </div>
         </div>
     </form>
 </div>
 <div class="col-12 align-self-start text-center">
-    <a href="#" type="Button" class="text-white btn btn-link m-0 bu">Volver</a>
+    <a href="/SistemaVelezSarsfield/public/usuarios" type="submit" class="text-white btn btn-link m-0 bu">Volver</a>
 </div>
 
 @endsection()

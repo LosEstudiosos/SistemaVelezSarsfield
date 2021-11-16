@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
-@section('title' , 'home')
+@section('title' , 'Bienvenido')
 
 @section('header')
-    Bienvenido a la pagina principal
+    <?php echo $_SESSION['nombre'];?>
 @endsection()
