@@ -27,6 +27,6 @@ class CreateEstadosCuentaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estado_cuentas');
+        Schema::dropIfExists('estados_cuenta');
     }
 }
