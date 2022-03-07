@@ -1,0 +1,17 @@
+Crea un Modelo
+php artisan make:model [NombreObjeto]
+
+Crea una Migracion de tipo CREATE en base a la Convención estandar
+php artisan make:migration create_[NombreTabla]_table
+
+Crea una Migracion de tipo ALTER TABLE en base a la Convención estandar
+php artisan make:migration add_[Tipo&ExplicacionAlter]_To_[NombreTabla]
+
+Crea un Seeder(Insertador de Datos) en base a la Convención estandar
+php artisan make:seeder [NombreObjeto]Seeder
+
+Crea un Factory(Generador de Datos) en base a la Convención estandar
+php artisan make:factory [NombreObjeto]Factory --model=[NombreObjeto]
+
+Ejecuta un down() de todas las Migraciones existentes y luego ejecuta los Seeders
+php artisan migrate:fresh --seed

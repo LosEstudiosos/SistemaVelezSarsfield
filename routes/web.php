@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
+Route::post('/home', [HomeController::class, 'home'])->name('home');
+Route::get('usuarios', [UsuariosController::class, 'listar'])->name('homeUser');
+Route::get('usuarios/registrar', [UsuariosController::class, 'registrar'])->name('usuarios.registrar');
+Route::post('usuarios/almacenar', [UsuariosController::class, 'almacenar'])->name('usuarios.save');
+Route::post('usuarios/modificar/{id}', [UsuariosController::class, 'modificar'])->name('usuarios.modificar');
+Route::post('usuarios/actualizar', [UsuariosController::class, 'actualizar'])->name('usuarios.update');
+Route::post('usuarios', [UsuariosController::class, 'altabaja'])->name('usuarios.altabaja');
+
+Route::post('usuarios/borrar', [UsuariosController::class, 'borrar'])->name('usuarios.borrar');
