@@ -25,3 +25,7 @@ Route::post('usuarios/actualizar', [UsuariosController::class, 'actualizar'])->n
 Route::post('usuarios', [UsuariosController::class, 'altabaja'])->name('usuarios.altabaja');
 
 Route::post('usuarios/borrar', [UsuariosController::class, 'borrar'])->name('usuarios.borrar');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+http://127.0.0.1:8000/css/app.css

@@ -7,20 +7,20 @@
     <title>@yield('title')</title>
 
     <!-- v--Estilos--v -->
-    <link href="/SistemaVelezSarsfield/resources/css/tailwind.min.css" rel="stylesheet"/>
-    <link href="/SistemaVelezSarsfield/resources/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/SistemaVelezSarsfield/resources/css/all.css" rel="stylesheet"/>
-    <link href="/SistemaVelezSarsfield/resources/css/font-awesome-animation.min.css" rel="stylesheet"/>
-    <link href="/SistemaVelezSarsfield/resources/css/style.css" rel="stylesheet"/>
+    <link href="/css/tailwind.min.css" rel="stylesheet"/>
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/all.css" rel="stylesheet"/>
+    <link href="/css/font-awesome-animation.min.css" rel="stylesheet"/>
+    <link href="/css/style.css" rel="stylesheet"/>
     @yield('styles')
     <!-- ^--Estilos--^ -->
 
     <!-- v--JavaScripts--v -->
-    <script src="/SistemaVelezSarsfield/resources/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- ^--JavaScripts--^ -->
 
     <!-- v--Favicon--v -->
-    <link href="/SistemaVelezSarsfield/resources/img/icons/escudo.ico" rel="shortcut icon">
+    <link href="/img/icons/escudo.ico" rel="shortcut icon">
     <!-- ^--vFavicon--^ -->
    
 </head>
@@ -35,7 +35,7 @@
                 </h1>
             </div>
             <div class="col-6">
-                <img class="d-flex ms-auto b border border-5 border-dark" src="/SistemaVelezSarsfield/resources/img/logo.png" alt="">
+                <img class="d-flex ms-auto b border border-5 border-dark" src="/img/logo.png" alt="">
             </div>
         </div>
     </div>
