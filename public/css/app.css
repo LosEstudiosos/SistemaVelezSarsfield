@@ -1009,12 +1009,19 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.float-right {
+  float: right;
+}
 .m-0 {
   margin: 0px;
 }
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .my-3 {
   margin-top: 0.75rem;
@@ -1027,10 +1034,6 @@ select {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-}
-.mx-0 {
-  margin-left: 0px;
-  margin-right: 0px;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1101,17 +1104,20 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
 .mt-auto {
   margin-top: auto;
 }
 .ml-auto {
   margin-left: auto;
 }
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .-mt-px {
   margin-top: -1px;
+}
+.mt-0 {
+  margin-top: 0px;
 }
 .block {
   display: block;
@@ -1157,6 +1163,9 @@ select {
 }
 .h-20 {
   height: 5rem;
+}
+.h-auto {
+  height: auto;
 }
 .min-h-screen {
   min-height: 100vh;
