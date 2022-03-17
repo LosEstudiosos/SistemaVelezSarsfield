@@ -25,5 +25,8 @@ composer require laravel/jetstream
 Instalar Admin LTE3
 composer require jeroennoten/laravel-adminlte
 
+Instalar livewire
+php artisan jetstream:install livewire
+
 Compilar proyecto
 npm run dev
