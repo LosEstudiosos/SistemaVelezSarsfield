@@ -58,18 +58,27 @@
                 <input class="form-control border-3 b-i" type = "text" name="numero" placeholder='Numero'/>
             </div>
             <div class="col-12 mt-3">
-                <select name="pais" class="form-select" id="">
-                    <option selected>Pais</option>
+                <select name="nacionalidad" class="form-select" id="">
+                    <option selected>Nacionalidad</option>
+                    <option selected>Argentina</option>
                 </select>
             </div>
             <div class="col-12 mt-3">
                 <select name="provincia" class="form-select" id="">
-                    <option selected>Provincia</option>
+                    <option selected>Provincia</option>                    
+                    <option selected>Entre Rios</option>
+                </select>
+            </div>
+            <div class="col-12 mt-3">
+                <select name="departamento" class="form-select" id="">
+                    <option selected>Departamento</option>
+                    <option selected>Concordia</option>
                 </select>
             </div>
             <div class="col-12 mt-3">
                 <select name="localidad" class="form-select" id="">
                     <option selected>Localidad</option>
+                    <option selected>La Bianca</option>
                 </select>
             </div>
             <div class="col-6 mt-3">
@@ -85,7 +94,7 @@
     </form>
 </div>
 <div class="col-12 align-self-start text-center">
-    <a href="/SistemaVelezSarsfield/public/usuarios" type="submit" class="text-white btn btn-link m-0 bu">Volver</a>
+    <a href="/usuarios" type="submit" class="text-white btn btn-link m-0 bu">Volver</a>
 </div>
 
 @endsection()

@@ -5,6 +5,7 @@ $(document).ready(function() {
             "processing": "Procesando...",
             "lengthMenu": "Mostrar " + 
                             `<select class="custom-select custom-select-sm form-control form-control-sm">
+                                <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
@@ -257,9 +258,29 @@ $(document).ready(function() {
                         columns: ':visible'
                     }
                 },
-                'colvis',
+                {
+                    extend:     'colvis',
+                    columns: 'th:nth-child(n+2)',
+                    columnText: function ( dt, idx, title ) {
+                        return 'Columna ' + (idx) +': '+title;
+                    }
+                },
         ],
-        searchBuilder: true        
-        });
+        searchBuilder: true,
+        "columnDefs": [
+        {
+            "targets": [ 0 ],
+            "visible": false
+        },
+        {
+            "targets": [ 6 ],
+            "visible": false
+        },
+        {
+            "targets": [ 7 ],
+            "visible": false
+        }
+    ]
+        });    
     document.getElementsByClassName('btn btn-secondary buttons-collection dropdown-toggle buttons-colvis')[0].firstElementChild.title = 'Visibilidad de Columnas';
     } );

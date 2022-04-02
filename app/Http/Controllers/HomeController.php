@@ -10,7 +10,7 @@ use function PHPUnit\Framework\isNull;
 class HomeController extends Controller
 {
     public function __invoke(){
-        return view('login');
+        return view('welcome');
     }
 
     public function home(){

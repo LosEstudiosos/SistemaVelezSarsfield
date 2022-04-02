@@ -15,3 +15,18 @@ php artisan make:factory [NombreObjeto]Factory --model=[NombreObjeto]
 
 Ejecuta un down() de todas las Migraciones existentes y luego ejecuta los Seeders
 php artisan migrate:fresh --seed
+
+Pagina para installar Node.js y NPM
+https://nodejs.org/es/download/
+
+Intalar Laravel JetStream
+composer require laravel/jetstream
+
+Instalar Admin LTE3
+composer require jeroennoten/laravel-adminlte
+
+Instalar livewire
+php artisan jetstream:install livewire
+
+Compilar proyecto
+npm run dev
