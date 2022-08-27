@@ -45,9 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    /*'logo' => '<b>Admin</b>LTE',*/
+    'logo' => 'Esc. Velez Sarsfield',
+    /*'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',*/
+    'logo_img' => '/img/logo.png',
+    /*'logo_img_class' => 'brand-image img-circle elevation-3',*/
+    'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'AdminLTE',
@@ -65,7 +68,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -188,7 +191,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -269,10 +272,20 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text'    => 'Usuarios',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar',
+                            'url'  => '/admin/usuarios',
+                        ],
+                        [
+                            'text' => 'Registrar',
+                            'url'  => '/admin/usuarios/registrar',
+                        ],
+                    ],
                 ],
-                [
+                /*[
                     'text'    => 'level_one',
                     'url'     => '#',
                     'submenu' => [
@@ -299,7 +312,7 @@ return [
                 [
                     'text' => 'level_one',
                     'url'  => '#',
-                ],
+                ],*/
             ],
         ],
         ['header' => 'labels'],
@@ -314,8 +327,13 @@ return [
             'url'        => '#',
         ],
         [
-            'text'       => 'information',
+            'text'       => 'Usuarios Registrados(33)',
             'icon_color' => 'cyan',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Usuarios Conectados(1)',
+            'icon_color' => 'success',
             'url'        => '#',
         ],
     ],
@@ -356,23 +374,121 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'asset' => true,
+                    'location' => '/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'asset' => true,
+                    'location' => '/js/dataTables.bootstrap5.min.jS',
+                ],
+                //<!-- v--Extension Responsive--v -->//
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/dataTables.responsive.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/responsive.bootstrap5.min.js',
+                ],
+                //<!-- ^--Extension Responsive--^ -->//
+                //<!-- v--Extension Impresiones--v -->//
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/dataTables.buttons.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/buttons.bootstrap5.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/jszip.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/pdfmake.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/vfs_fonts.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/buttons.html5.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/buttons.print.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/buttons.colVis.min.js',
+                ],
+                //<!-- ^--Extension Impresiones--^ -->//
+                //<!-- v--Extension Condiciones--v -->//
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/dataTables.searchBuilder.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/searchBuilder.bootstrap5.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/dataTables.dateTime.min.js',
+                ],
+                //<!-- ^--Extension Condiciones--^ -->//
+                //--------------------CSS--------------------//
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/dataTables.bootstrap5.min.css',
+                ],
+                //<!-- v--Extension Responsive--v -->//
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/responsive.bootstrap5.min.css',
+                ],
+                //<!-- ^--Extension Responsive--^ -->//
+                //<!-- v--Extension Impresiones--v -->
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/buttons.bootstrap5.min.css',
+                ],
+                //<!-- ^--Extension Impresiones--^ -->//
+                //<!-- v--Extension Condiciones--v -->//
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/searchBuilder.bootstrap5.min.css',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'asset' => true,
+                    'location' => '/css/dataTables.dateTime.min.css',
                 ],
+                //<!-- ^--Extension Condiciones--^ -->//
             ],
         ],
         'Select2' => [
@@ -391,7 +507,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -401,7 +517,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -472,5 +588,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
