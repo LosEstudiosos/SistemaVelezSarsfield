@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\ActasController;
 use App\Http\Livewire\Principal;
 
 
@@ -30,13 +31,14 @@ Route::post('usuarios', [UsuariosController::class, 'altabaja'])->name('usuarios
 
 Route::post('usuarios/borrar', [UsuariosController::class, 'borrar'])->name('usuarios.borrar');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function (){
+Route::get('/dashboard', function (){
     return view('dashboard');
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/actas', function (){
     return view('actas');
 })->name('actas');
+route::post('actas', [ActasController::class, 'store'])->name('actas.store');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/comunicados', function (){
     return view('comunicados');

@@ -15,6 +15,19 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label for="apellido" value="{{ __('Apellido') }}" />
+                <x-jet-input id="apellido" class="block mt-1 w-full" type="text" name="apellido" :value="old('apellido')" required />
+            </div> 
+
+            <div class="mt-4">
+                <x-jet-label for="estado_cuenta_id" value="{{ __('Estado') }}" />
+                <select class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="estado_cuenta_id">
+                    <option value="1">Estudiante</option>
+                    <option value="2">Profesor</option>
+                </select>
+            </div> 
+
+            <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>

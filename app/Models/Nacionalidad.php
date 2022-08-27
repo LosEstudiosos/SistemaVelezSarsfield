@@ -9,4 +9,8 @@ class Nacionalidad extends Model
 {
     use HasFactory;
     protected $table = "nacionalidades";
+
+    public function alumnos(){
+        return $this->hasMany('App\Models\alumno');
+    }
 }

@@ -9,4 +9,8 @@ class Estado_Cuenta extends Model
 {
     use HasFactory;
     protected $table = "estados_cuenta";
+
+    public function users(){ 
+        return $this->hasMany('App\Models\user');
+    }
 }

@@ -12,7 +12,7 @@
         <x-slot name="content">
 
             <div class="mb-4">
-                <x-jet-label value="title" />
+                <x-jet-label value="tltie" />
 
                 <x-jet-input class="w-full" type="text" wire:model="title" />
 
@@ -22,7 +22,8 @@
             <div class="mb-4">
                 <x-jet-label value="content" />
 
-                <x-jet-input class="w-full" type="text" wire:model="content" />
+{{--                 <x-jet-input class="w-full" type="text" wire:model="content" /> --}}
+                <textarea class="form-control w-full" rows="6"></textarea>
 
                 <x-jet-input-error for='content' />
             </div>
