@@ -277,45 +277,43 @@ return [
                     'submenu' => [
                         [
                             'text' => 'Listar',
-                            'url'  => '/admin/usuarios',
+                            'route'  => 'admin.user.list',
                         ],
                         [
                             'text' => 'Registrar',
-                            'url'  => '/admin/usuarios/registrar',
-                        ],
-                    ],
-                ],
-                /*[
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
+                            'route'  => 'admin.user.new',
                         ],
                     ],
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],*/
+                    'text'    => 'Mensajeria',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Bandeja de Entrada',
+                            'route'  => 'admin.mail.list.inbox',
+                        ],
+                        [
+                            'text' => 'Bandeja de Salida',
+                            'route'  => 'admin.mail.list.sent',
+                        ],
+                        [
+                            'text' => 'Borradores',
+                            'route'  => 'admin.mail.list.drafts',
+                        ],
+                        [
+                            'text' => 'Borrados',
+                            'route'  => 'admin.mail.list.trash',
+                        ],
+                        [
+                            'text' => 'Nuevo',
+                            'route'  => 'admin.mail.new',
+                        ],
+                    ],
+                ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'DATOS', 'key' => 'datos',    ],/*
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -325,16 +323,22 @@ return [
             'text'       => 'warning',
             'icon_color' => 'yellow',
             'url'        => '#',
-        ],
-        [
-            'text'       => 'Usuarios Registrados(33)',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        ],*/
         [
             'text'       => 'Usuarios Conectados(1)',
             'icon_color' => 'success',
             'url'        => '#',
+        ],
+        ['header' => 'HERRAMIENTAS'],
+        [
+            'text'       => 'Log',
+            'icon_color' => 'navy',
+            'url'        => 'admin/log-viewer',
+        ],
+        [
+            'text'       => 'PHPMyAdmin',
+            'icon_color' => 'navy',
+            'url'        => 'phpmyadmin/index.php',
         ],
     ],
 
@@ -379,116 +383,130 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/jquery.dataTables.min.js',
+                    'location' => '/js/datatable/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/dataTables.bootstrap5.min.jS',
+                    'location' => '/js/datatable/dataTables.bootstrap5.min.jS',
                 ],
                 //<!-- v--Extension Responsive--v -->//
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/dataTables.responsive.min.js',
+                    'location' => '/js/datatable/dataTables.responsive.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/responsive.bootstrap5.min.js',
+                    'location' => '/js/datatable/responsive.bootstrap5.min.js',
                 ],
                 //<!-- ^--Extension Responsive--^ -->//
                 //<!-- v--Extension Impresiones--v -->//
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/dataTables.buttons.min.js',
+                    'location' => '/js/datatable/dataTables.buttons.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/buttons.bootstrap5.min.js',
+                    'location' => '/js/datatable/buttons.bootstrap5.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/jszip.min.js',
+                    'location' => '/js/datatable/jszip.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/pdfmake.min.js',
+                    'location' => '/js/datatable/pdfmake.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/vfs_fonts.js',
+                    'location' => '/js/datatable/vfs_fonts.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/buttons.html5.min.js',
+                    'location' => '/js/datatable/buttons.html5.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/buttons.print.min.js',
+                    'location' => '/js/datatable/buttons.print.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/buttons.colVis.min.js',
+                    'location' => '/js/datatable/buttons.colVis.min.js',
                 ],
                 //<!-- ^--Extension Impresiones--^ -->//
                 //<!-- v--Extension Condiciones--v -->//
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/dataTables.searchBuilder.min.js',
+                    'location' => '/js/datatable/dataTables.searchBuilder.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/searchBuilder.bootstrap5.min.js',
+                    'location' => '/js/datatable/searchBuilder.bootstrap5.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/js/dataTables.dateTime.min.js',
+                    'location' => '/js/datatable/dataTables.dateTime.min.js',
                 ],
                 //<!-- ^--Extension Condiciones--^ -->//
+                //<!-- v--Extension CheckBoxes--v -->
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/datatable/dataTables.checkboxes.min.js',
+                ],
+                //<!-- ^--Extension CheckBoxes--^ -->//
                 //--------------------CSS--------------------//
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '/css/dataTables.bootstrap5.min.css',
+                    'location' => '/css/datatable/dataTables.bootstrap5.min.css',
                 ],
                 //<!-- v--Extension Responsive--v -->//
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '/css/responsive.bootstrap5.min.css',
+                    'location' => '/css/datatable/responsive.bootstrap5.min.css',
                 ],
                 //<!-- ^--Extension Responsive--^ -->//
                 //<!-- v--Extension Impresiones--v -->
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '/css/buttons.bootstrap5.min.css',
+                    'location' => '/css/datatable/buttons.bootstrap5.min.css',
                 ],
                 //<!-- ^--Extension Impresiones--^ -->//
                 //<!-- v--Extension Condiciones--v -->//
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '/css/searchBuilder.bootstrap5.min.css',
+                    'location' => '/css/datatable/searchBuilder.bootstrap5.min.css',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '/css/dataTables.dateTime.min.css',
+                    'location' => '/css/datatable/dataTables.dateTime.min.css',
                 ],
                 //<!-- ^--Extension Condiciones--^ -->//
+                //<!-- v--Extension CheckBoxes--v -->
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/datatable/dataTables.checkboxes.css',
+                ],
+                //<!-- ^--Extension CheckBoxes--^ -->//
             ],
         ],
         'Select2' => [
@@ -538,6 +556,51 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'BootstrapSelect' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/select2/select2.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/select2/i18n/es.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/select2/select2-bootstrap-5-theme.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/select2/select2.css',
+                ],
+            ],
+        ],
+        'Summernote' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/summernote/summernote-bs5.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/summernote/lang/summernote-es-ES.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/summernote/summernote-bs5.min.css',
                 ],
             ],
         ],

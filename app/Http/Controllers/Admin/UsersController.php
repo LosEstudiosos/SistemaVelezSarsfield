@@ -4,21 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Estado_Cuenta;
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
-/*
-Route::get('usuarios/registrar', [UsersController::class, 'new'])->name('admin.user.new');
-Route::post('usuarios/guardar', [UsersController::class, 'save'])->name('admin.user.save');
-Route::post('usuarios/modificar/{id}', [UsersController::class, 'edit'])->name('admin.user.edit');
-Route::post('usuarios/actualizar', [UsersController::class, 'update'])->name('admin.user.update');
-Route::post('usuarios', [UsersController::class, 'discharge'])->name('admin.user.discharge');*/
 {
     public function list(){
-        $listUsuarios = Usuario::all();
+        $listUsers = User::all();
         $listEstados = Estado_Cuenta::all();
-        return view('admin.user.list', compact('listUsuarios','listEstados'));
+        return view('admin.user.list', compact('listUsers','listEstados'));
     }
 
     public function new(){
@@ -26,48 +20,46 @@ Route::post('usuarios', [UsersController::class, 'discharge'])->name('admin.user
     }
     
     public function save(Request $request){
-        $usuario = new Usuario();
-        $usuario->nombre = $request->nombre;
-        $usuario->apellido = $request->apellido;
-        $usuario->email = $request->email;
-        $usuario->usuario = $request->usuario;
-        $usuario->password = $request->password;
-        $usuario->id_estado_cuenta = 1;
-        $usuario->save();
-        return $this->list();
+        $User = new User();
+        $User->name = $request->name;
+        $User->last_name = $request->last_name;
+        $User->email = $request->email;
+        $User->password = $request->password;
+        $User->estado_cuenta_id = 1;
+        $User->save();
+        return redirect()->route('admin.user.list');
     }
 
     public function edit($id){
-        $usuario = Usuario::where('id',$id)->get();
-        return view('admin.user.edit',compact('usuario'));
+        $user = User::where('id',$id)->get();
+        return view('admin.user.edit',compact('user'));
     }
 
     public function update(Request $request){
-        Usuario::where('id',$request->id)
+        User::where('id',$request->id)
                     ->update(array(
-                        'nombre'=>$request->nombre,
-                        'apellido'=>$request->apellido,
+                        'name'=>$request->name,
+                        'last_name'=>$request->last_name,
                         'email'=>$request->email,
-                        'usuario'=>$request->usuario,
                         'password'=>$request->password,
                     ));
-        return $this->list();
+        return redirect()->route('admin.user.list');
     }
 
     public function discharge(Request $request){
         $newEstado = 1;
-        if($request->id_estado_cuenta == 1){
+        if($request->estado_cuenta_id == 1){
             $newEstado = 2;
         }
-        Usuario::where('id',$request->id)
+        User::where('id',$request->id)
                     ->update(array(
-                        'id_estado_cuenta'=> $newEstado
+                        'estado_cuenta_id'=> $newEstado
                     ));
-        return $this->list();
+        return redirect()->route('admin.user.list');
     }
 
     public function delete(Request $request){
-        Usuario::where('id',$request->id)->delete();
-        return $this->list();
+        User::where('id',$request->id)->delete();
+        return redirect()->route('admin.user.list');
     }
 }

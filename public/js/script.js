@@ -273,11 +273,11 @@ $(document).ready(function() {
             "visible": false
         },
         {
-            "targets": [ 6 ],
+            "targets": [ 4 ],
             "visible": false
         },
         {
-            "targets": [ 7 ],
+            "targets": [ 5 ],
             "visible": false
         }
     ]

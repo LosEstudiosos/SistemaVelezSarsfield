@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
-    <link href="/SistemaVelezSarsfield/resources/css/bootstrap.min.css" rel="stylesheet" >
-    <link href="/SistemaVelezSarsfield/resources/js/bootstrap.min.js" rel="stylesheet" >
+    <link href="/SistemaVelezSarsfield/resources/css/bootstrap/bootstrap.min.css" rel="stylesheet" >
+    <link href="/SistemaVelezSarsfield/resources/js/bootstrap/bootstrap.min.js" rel="stylesheet" >
     <link href="/SistemaVelezSarsfield/resources/css/style.css" rel="stylesheet">
     <!-- favicon -->
     <link href="/SistemaVelezSarsfield/resources/img/icons/escudo.ico" rel="shortcut icon">

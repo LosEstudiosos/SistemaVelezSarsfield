@@ -15,8 +15,8 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="apellido" value="{{ __('Apellido') }}" />
-                <x-jet-input id="apellido" class="block mt-1 w-full" type="text" name="apellido" :value="old('apellido')" required />
+                <x-jet-label for="last_name" value="{{ __('last_name') }}" />
+                <x-jet-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required />
             </div> 
 
             <div class="mt-4">
