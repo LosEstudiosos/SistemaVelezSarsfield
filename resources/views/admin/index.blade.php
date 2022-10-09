@@ -1,5 +1,5 @@
 @extends('layouts.admin.template')
-
+{{-- @extends('adminlte::page', ['iFrameEnabled' => true]) --}}
 @section('title', 'Velez Sarsfield')
 
 @section('content_header')

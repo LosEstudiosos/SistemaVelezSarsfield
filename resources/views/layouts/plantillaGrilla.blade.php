@@ -8,54 +8,55 @@
     
     <!-- v--Estilos--v -->
     <link href="/css/tailwind.min.css" rel="stylesheet"/>
-    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
-    <link href="/css/all.css" rel="stylesheet"/>
-    <link href="/css/font-awesome-animation.min.css" rel="stylesheet"/>
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/datatable/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+    <link href="/css/font-awesome/all.css" rel="stylesheet"/>
+    <link href="/css/font-awesome/font-awesome-animation.min.css" rel="stylesheet"/>
     
         <!-- v--Extension Responsive--v -->
-        <link href="/css/responsive.bootstrap5.min.css" rel="stylesheet"/>
+        <link href="/css/datatable/responsive.bootstrap5.min.css" rel="stylesheet"/>
         <!-- ^--Extension Responsive--^ -->
         
         <!-- v--Extension Impresiones--v -->
-        <link href="/css/buttons.bootstrap5.min.css" rel="stylesheet"/>
+        <link href="/css/datatable/buttons.bootstrap5.min.css" rel="stylesheet"/>
         <!-- ^--Extension Impresiones--^ -->
         
         <!-- v--Extension Condiciones--v -->
-        <link href="/css/searchBuilder.bootstrap5.min.css" rel="stylesheet"/>
-        <link href="/css/dataTables.dateTime.min.css" rel="stylesheet"/>
+        <link href="/css/datatable/searchBuilder.bootstrap5.min.css" rel="stylesheet"/>
+        <link href="/css/datatable/dataTables.dateTime.min.css" rel="stylesheet"/>
         <!-- ^--Extension Condiciones--^ -->
 
     <link href="/css/style.css" rel="stylesheet"/>
     <!-- ^--Estilos--^ -->
 
     <!-- v--JavaScripts--v -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
     <script src="/js/jquery-3.5.1.js"></script>
-    <script src="/js/jquery.dataTables.min.js"></script>
-    <script src="/js/dataTables.bootstrap5.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="/js/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/js/font-awesome/all.js"></script>
 
         <!-- v--Extension Responsive--v -->
-        <script src="/js/dataTables.responsive.min.js"></script>
-        <script src="/js/responsive.bootstrap5.min.js"></script>
+        <script src="/js/datatable/dataTables.responsive.min.js"></script>
+        <script src="/js/datatable/responsive.bootstrap5.min.js"></script>
         <!-- ^--Extension Responsive--^ -->
         
         <!-- v--Extension Impresiones--v -->
-        <script src="/js/dataTables.buttons.min.js"></script>
-        <script src="/js/buttons.bootstrap5.min.js"></script>
-        <script src="/js/jszip.min.js"></script>
-        <script src="/js/pdfmake.min.js"></script>
-        <script src="/js/vfs_fonts.js"></script>
-        <script src="/js/buttons.html5.min.js"></script>
-        <script src="/js/buttons.print.min.js"></script>
-        <script src="/js/buttons.colVis.min.js"></script>
+        <script src="/js/datatable/dataTables.buttons.min.js"></script>
+        <script src="/js/datatable/buttons.bootstrap5.min.js"></script>
+        <script src="/js/datatable/jszip.min.js"></script>
+        <script src="/js/datatable/pdfmake.min.js"></script>
+        <script src="/js/datatable/vfs_fonts.js"></script>
+        <script src="/js/datatable/buttons.html5.min.js"></script>
+        <script src="/js/datatable/buttons.print.min.js"></script>
+        <script src="/js/datatable/buttons.colVis.min.js"></script>
         <!-- ^--Extension Impresiones--^ -->
 
         <!-- v--Extension Condiciones--v -->
-        <script src="/js/dataTables.searchBuilder.min.js"></script>
-        <script src="/js/searchBuilder.bootstrap5.min.js"></script>
-        <script src="/js/dataTables.dateTime.min.js"></script>
+        <script src="/js/datatable/dataTables.searchBuilder.min.js"></script>
+        <script src="/js/datatable/searchBuilder.bootstrap5.min.js"></script>
+        <script src="/js/datatable/dataTables.dateTime.min.js"></script>
         <!-- ^--Extension Condiciones--^ -->
         
     <script src="/js/script.js"></script>
