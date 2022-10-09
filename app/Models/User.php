@@ -25,6 +25,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
+        'estado_cuenta_id',
         'email',
         'password',
     ];
@@ -58,4 +60,44 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function directivo(){
+        return $this->hasOne('App\Models\directivo');
+    }
+    
+    public function tutore(){
+        return $this->hasOne('App\Models\tutore');
+    }
+
+    public function preceptore(){
+        return $this->hasOne('App\Models\preceptore');
+    }
+
+    public function responsable(){
+        return $this->hasOne('App\Models\responsable');
+    }
+
+    public function Estado_Cuenta(){ 
+        return $this->belongsTo('App\Models\Estado_Cuenta');
+    }
+
+    public function actas_reuniones(){
+        return $this->belongsToMany('App\Models\actas_reunione');
+    }
+
+    public function Roles(){
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function alumno(){
+        return $this->hasOne('App\Models\alumno');
+    }
+
+    public function profesore(){
+        return $this->hasOne('App\Models\profesore');
+    }
+
+    public function Recordatorios(){
+        return $this->hasMany('App\Models\Recordatorio');
+    }
 }

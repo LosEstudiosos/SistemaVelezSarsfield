@@ -25,7 +25,7 @@ class HomeController extends Controller
         else{
             session_start();
             $_SESSION['nombre'] = $usuarioActual[0]->nombre;
-            $_SESSION['apellido'] = $usuarioActual[0]->apellido;
+            $_SESSION['last_name'] = $usuarioActual[0]->last_name;
             $_SESSION['email'] = $usuarioActual[0]->email;
             $_SESSION['usuario'] = $usuarioActual[0]->usuario;
             //$_SESSION['_token'] = $usuarioActual[0]->nombre;

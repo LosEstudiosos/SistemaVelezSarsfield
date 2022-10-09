@@ -30,3 +30,15 @@ php artisan jetstream:install livewire
 
 Compilar proyecto
 npm run dev
+
+Compilar de forma automatico
+npm run watch
+
+Subir el servidor
+php artisan serve
+
+Crear componente livewire 
+php artisan make:livewire "nombre del componente"
+
+Ver todos los componentes de jetstream
+php artisan vendor:publish --tag=jetstream-views

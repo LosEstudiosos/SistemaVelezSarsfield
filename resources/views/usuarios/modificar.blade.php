@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="col-4 bg-white b border border-5 border-dark">
-    <form action="{{route('usuarios.update')}}" method="POST">
+    <form action="ll" method="POST">
         <div class="row">
             @csrf
             <div class="col-12 d-flex justify-content-end mt-3">
