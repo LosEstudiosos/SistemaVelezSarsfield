@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    
-    <!-- v--Estilos--v -->
-    <link href="/css/tailwind.min.css" rel="stylesheet"/>
-    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
-    <link href="/css/all.css" rel="stylesheet"/>
-    <link href="/css/font-awesome-animation.min.css" rel="stylesheet"/>
-    
-        <!-- v--Extension Responsive--v -->
-        <link href="/css/responsive.bootstrap5.min.css" rel="stylesheet"/>
-        <!-- ^--Extension Responsive--^ -->
-        
-        <!-- v--Extension Impresiones--v -->
-        <link href="/css/buttons.bootstrap5.min.css" rel="stylesheet"/>
-        <!-- ^--Extension Impresiones--^ -->
-        
-        <!-- v--Extension Condiciones--v -->
-        <link href="/css/searchBuilder.bootstrap5.min.css" rel="stylesheet"/>
-        <link href="/css/dataTables.dateTime.min.css" rel="stylesheet"/>
-        <!-- ^--Extension Condiciones--^ -->
 
-    <link href="/css/style.css" rel="stylesheet"/>
+    <!-- v--Estilos--v -->
+    <link href="/css/tailwind.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="/css/all.css" rel="stylesheet" />
+    <link href="/css/font-awesome-animation.min.css" rel="stylesheet" />
+
+    <!-- v--Extension Responsive--v -->
+    <link href="/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+    <!-- ^--Extension Responsive--^ -->
+
+    <!-- v--Extension Impresiones--v -->
+    <link href="/css/buttons.bootstrap5.min.css" rel="stylesheet" />
+    <!-- ^--Extension Impresiones--^ -->
+
+    <!-- v--Extension Condiciones--v -->
+    <link href="/css/searchBuilder.bootstrap5.min.css" rel="stylesheet" />
+    <link href="/css/dataTables.dateTime.min.css" rel="stylesheet" />
+    <!-- ^--Extension Condiciones--^ -->
+
+    <link href="/css/style.css" rel="stylesheet" />
     <!-- ^--Estilos--^ -->
 
     <!-- v--JavaScripts--v -->
@@ -36,28 +37,28 @@
     <script src="/js/dataTables.bootstrap5.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
 
-        <!-- v--Extension Responsive--v -->
-        <script src="/js/dataTables.responsive.min.js"></script>
-        <script src="/js/responsive.bootstrap5.min.js"></script>
-        <!-- ^--Extension Responsive--^ -->
-        
-        <!-- v--Extension Impresiones--v -->
-        <script src="/js/dataTables.buttons.min.js"></script>
-        <script src="/js/buttons.bootstrap5.min.js"></script>
-        <script src="/js/jszip.min.js"></script>
-        <script src="/js/pdfmake.min.js"></script>
-        <script src="/js/vfs_fonts.js"></script>
-        <script src="/js/buttons.html5.min.js"></script>
-        <script src="/js/buttons.print.min.js"></script>
-        <script src="/js/buttons.colVis.min.js"></script>
-        <!-- ^--Extension Impresiones--^ -->
+    <!-- v--Extension Responsive--v -->
+    <script src="/js/dataTables.responsive.min.js"></script>
+    <script src="/js/responsive.bootstrap5.min.js"></script>
+    <!-- ^--Extension Responsive--^ -->
 
-        <!-- v--Extension Condiciones--v -->
-        <script src="/js/dataTables.searchBuilder.min.js"></script>
-        <script src="/js/searchBuilder.bootstrap5.min.js"></script>
-        <script src="/js/dataTables.dateTime.min.js"></script>
-        <!-- ^--Extension Condiciones--^ -->
-        
+    <!-- v--Extension Impresiones--v -->
+    <script src="/js/dataTables.buttons.min.js"></script>
+    <script src="/js/buttons.bootstrap5.min.js"></script>
+    <script src="/js/jszip.min.js"></script>
+    <script src="/js/pdfmake.min.js"></script>
+    <script src="/js/vfs_fonts.js"></script>
+    <script src="/js/buttons.html5.min.js"></script>
+    <script src="/js/buttons.print.min.js"></script>
+    <script src="/js/buttons.colVis.min.js"></script>
+    <!-- ^--Extension Impresiones--^ -->
+
+    <!-- v--Extension Condiciones--v -->
+    <script src="/js/dataTables.searchBuilder.min.js"></script>
+    <script src="/js/searchBuilder.bootstrap5.min.js"></script>
+    <script src="/js/dataTables.dateTime.min.js"></script>
+    <!-- ^--Extension Condiciones--^ -->
+
     <script src="/js/script.js"></script>
     <!-- ^--JavaScripts--^ -->
 
@@ -82,7 +83,7 @@
     </div>
 
     <!-- nav -->
-    @yield('nav') 
+    @yield('nav')
 
     <!-- content -->
     <div class="row justify-content-center mt-3 mx-0">
@@ -91,35 +92,37 @@
                 <div class="card" id="card_grilla">
                     <div class="card-body">
                         @yield('body')
-                        <table id="tabla" class="table table-striped align-middle table-bordered mt-auto table-sm text-center">
+                        <table id="tabla"
+                            class="table table-striped align-middle table-bordered mt-auto table-sm text-center">
                             <thead>
-                                <tr class="table-dark">
-                                    @yield('table_head')
-                                </tr>
+
+                                @yield('table_head')
+
                             </thead>
                             <tbody class="table-secondary">
                                 @yield('table_body')
                             </tbody>
                         </table>
-                    <div>
-                <div>
-            </div>
-        </ul>    
+                        <div>
+                            <div>
+                            </div>
+        </ul>
     </div>
-<footer>
-    <!-- footer -->
-    @yield('footer')
-</footer>
-    
+    <footer>
+        <!-- footer -->
+        @yield('footer')
+    </footer>
+
     <div class="text-dark justify-content-center text-center mt-4 pt-auto h5 font-weight-bold">
-        © Grupo 2 - 2021<br/>
-        Canet José Francisco<br/>
-        Centurión Sebastián Ignacio<br/>
-        Lapalma Alexander Santino<br/>
+        © Grupo 2 - 2021<br />
+        Canet José Francisco<br />
+        Centurión Sebastián Ignacio<br />
+        Lapalma Alexander Santino<br />
         Rodríguez Federico José
     </div>
 
     <!-- script -->
     @yield('script')
 </body>
+
 </html>

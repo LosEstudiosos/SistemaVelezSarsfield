@@ -11,6 +11,6 @@ class Estado_Cuenta extends Model
     protected $table = "estados_cuenta";
 
     public function users(){ 
-        return $this->hasMany('App\Models\user');
+        return $this->hasMany('App\Models\User');
     }
 }

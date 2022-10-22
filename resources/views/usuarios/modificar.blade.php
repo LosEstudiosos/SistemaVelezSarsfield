@@ -15,7 +15,7 @@
                 <input size="4" class="border-3 b-i" type = "hidden" name="id" placeholder='Id' value="{{$usuario[0]->id}}"/>
             </div>
             <div class="col-6 mt-3">
-                <input class="form-control border-3 b-i" type = "text" name="nombre" placeholder='Nombre' value="{{$usuario[0]->nombre}}"/>
+                <input class="form-control border-3 b-i" type = "text" name="nombre" placeholder='Nombre' value="{{$usuario[0]->name}}"/>
             </div>
             <div class="col-6 mt-3">
                 <input class="form-control border-3 b-i" type = "text" name="apellido" placeholder='Apellido' value="{{$usuario[0]->apellido}}"/>
@@ -35,6 +35,7 @@
                     <option selected value="0">Tipo de usuario</option>
                     <option value="1">Profesor</option>
                     <option value="2">Alumno</option>
+                    <option value="3">Directivo</option>
                     <option value="3">Tutor</option>
                     <option value="4">Preceptor</option>
                 </select>

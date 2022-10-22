@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,8 @@
     <link href="/css/all.css" rel="stylesheet"/>
     <link href="/css/font-awesome-animation.min.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet"/>
-    @yield('styles')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
     <!-- ^--Estilos--^ -->
 
     <!-- v--JavaScripts--v -->
@@ -29,10 +30,10 @@
     <div class="container-fluid">
         <div class="row r position-sticky top-0">
             <div class="col-6 d-flex align-self-center">
-                <h1 class="text-white">
+                <p class="text-white text-4xl">
                     <!-- header -->
                     @yield('header')
-                </h1>
+                </p>
             </div>
             <div class="col-6">
                 <img class="d-flex ms-auto b border border-5 border-dark" src="/img/logo.png" alt="">
@@ -44,7 +45,7 @@
     @yield('nav') 
 
     <!-- content -->
-    <div class="row justify-content-center mt-3 mx-0">
+    <div class=" mt-3 ">
         @yield('content')
     </div>
 

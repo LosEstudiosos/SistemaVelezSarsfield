@@ -30,7 +30,7 @@ class alumno extends Model
     }
 
     public function cursos(){
-        return $this->belongsToMany('App\Models\curso');
+        return $this->belongsToMany('App\Models\curso', 'clases');
     }
 
     public function libreta(){

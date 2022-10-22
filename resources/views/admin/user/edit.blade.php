@@ -7,7 +7,7 @@
 @section('content')
 <div class="row justify-content-center mx-0">
     <div class="col-4 bg-white b border border-5 border-dark">
-        <form action="{{route('admin.user.update')}}" method="POST">
+        <form action="{{route('admin.user.update')}}" method="post">
             <div class="row">
                 @csrf
                 <div class="col-12 d-flex justify-content-end mt-3">
