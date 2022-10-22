@@ -10,7 +10,7 @@ class curso extends Model
     use HasFactory;
 
     public function alumnos(){
-        return $this->belongsToMany('App\Models\alumno');
+        return $this->belongsToMany('App\Models\alumno', 'clases');
     }
 
     public function asignaturas_cursos(){
