@@ -17,8 +17,7 @@ class CreateMensajeriasTable extends Migration
             $table->id();
 
             $table->string('titulo',45);
-            $table->string('mensajeria',45);
-            $table->date('fecha_edicion');
+            $table->text('cuerpo');
 
             $table->unsignedBigInteger('tipos_mensajeria_id');
             $table->unsignedBigInteger('respuesta_id')->nullable();

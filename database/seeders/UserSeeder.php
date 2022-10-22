@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         ])->assignRole('Admin');
         /* $usuario = new User();
         $usuario -> name = 'Admin';
-        $usuario -> apellido = '';
+        $usuario -> last_name = '';
         $usuario -> dni = '12345678';
         $usuario -> email = 'admin@example.com';
         //$usuario -> usuario = 'admin';

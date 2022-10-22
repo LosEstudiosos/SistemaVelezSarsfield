@@ -1,7 +1,7 @@
 @extends('layouts.admin.template')
 
 @section('content_header')
-    <h1>Actualizar a {{$usuario[0]->nombre}}</h1>
+    <h1>Actualizar a {{$user[0]->nombre}}</h1>
 @stop
 
 @section('content')
@@ -11,26 +11,27 @@
             <div class="row">
                 @csrf
                 <div class="col-12 d-flex justify-content-end mt-3">
-                    <input size="4" class="border-3 b-i" type = "hidden" name="id" placeholder='Id' value="{{$usuario[0]->id}}"/>
+                    <input size="4" class="border-3 b-i" type = "hidden" name="id" placeholder='Id' value="{{$user[0]->id}}"/>
                 </div>
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "text" name="nombre" placeholder='Nombre' value="{{$usuario[0]->nombre}}"/>
+                    <input class="form-control border-3 b-i" type = "text" name="name" placeholder='Nombre' value="{{$user[0]->name}}"/>
                 </div>
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "text" name="apellido" placeholder='Apellido' value="{{$usuario[0]->apellido}}"/>
+                    <input class="form-control border-3 b-i" type = "text" name="last_name" placeholder='Apellido' value="{{$user[0]->last_name}}"/>
                 </div>
+                <!--
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "text" name="usuario" placeholder='Usuario' value="{{$usuario[0]->usuario}}"/>
-                </div>
+                    <input class="form-control border-3 b-i" type = "text" name="user" placeholder='user' value="{{$user[0]->user}}"/>
+                </div>-->
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "password" name="password" placeholder='Contraseña' value="{{$usuario[0]->password}}"/>
+                    <input class="form-control border-3 b-i" type = "password" name="password" placeholder='Contraseña' value="{{$user[0]->password}}"/>
                 </div>
                 <div class="col-12 form-floating mt-3">
-                    <input id="1" class="form-control border-3 b-i" type = "text" name="email" placeholder='Email' value="{{$usuario[0]->email}}"/>
+                    <input id="1" class="form-control border-3 b-i" type = "text" name="email" placeholder='Email' value="{{$user[0]->email}}"/>
                     <label for="1" class="ms-2">Email</label>
                 </div>
                 <div class="col-12 mt-3">
-                    <select name="Tipo Usuario" class="form-select" id="">
+                    <select name="Tipouser" class="form-select" id="">
                         <option selected value="0">Tipo de usuario</option>
                         <option value="1">Profesor</option>
                         <option value="2">Alumno</option>
@@ -43,7 +44,7 @@
                     <label for="2" class="ms-2">Fecha de nacimiento</label>
                 </div>
                 <div class="col-12 mt-3">
-                    <select name="Tipo Sexo" class="form-select" id="">
+                    <select name="TipoSexo" class="form-select" id="">
                         <option selected value="3">Tipo de sexo</option>
                         <option value="1">Femenino</option>
                         <option value="2">Masculino</option>
@@ -96,4 +97,8 @@
         <a href="{{route('admin.user.list')}}" type="submit" class="text-dark btn btn-outline-info m-0">Volver</a>
     </div>
 </div>
+@stop
+
+@section('addCSS')
+    <link rel="stylesheet" href="/css/style.css" defer/>
 @stop

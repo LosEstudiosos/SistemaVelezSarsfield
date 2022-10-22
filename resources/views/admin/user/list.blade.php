@@ -1,15 +1,14 @@
 @extends('layouts.admin.grid')
 
-@section('title', 'Usuarios Velez Sarsfield')
+@section('title', 'users Velez Sarsfield')
 
 @section('content_header')
-    <h1>Lista de Usuarios en Velez Sarsfield</h1>
+    <h1>Lista de users en Velez Sarsfield</h1>
 @stop
 
 @section('table_head')
     <tr class="table-dark">
         <th scope="col">ID</th>
-        <th scope="col">Nombre de usuario</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
         <th scope="col">Email</th>
@@ -21,16 +20,15 @@
 @endsection()
 
 @section('table_body')
-    @foreach ($listUsuarios as $usuario)
+    @foreach ($listUsers as $user)
         <tr scope="row">
-            <td>{{$usuario->id}}</td>
-            <td>{{$usuario->usuario}}</td>
-            <td>{{$usuario->nombre}}</td>
-            <td>{{$usuario->apellido}}</td>
-            <td>{{$usuario->email}}</td>
-            <td>{{$usuario->created_at->format('d-m-Y')}}</td>
-            <td>{{$usuario->updated_at->format('d-m-Y')}}</td>
-            @php $id = ($usuario->id_estado_cuenta) - 1 @endphp
+            <td>{{$user->id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->last_name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->created_at->format('d-m-Y')}}</td>
+            <td>{{$user->updated_at->format('d-m-Y')}}</td>
+            @php $id = ($user->estado_cuenta_id) - 1 @endphp
             @switch($id)
                 @case(0)                                        
                 <td class="text-success text-uppercase">
@@ -48,22 +46,22 @@
             </td>
             <td>
                 <div class="btn-group" role="group">
-                    <form class="bg-secondary b border border-5" action="{{route('admin.user.edit',$usuario->id)}}"  method="POST">
+                    <form class="bg-secondary b border border-5" action="{{route('admin.user.edit',$user->id)}}"  method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-warning btn-sm" title="Modificar a [{{strtoupper($usuario->usuario)}}]">
+                        <button type="submit" class="btn btn-warning btn-sm" title="Modificar a [{{strtoupper($user->email)}}]">
                             <i class="fas fa-edit faa-wrench animated-hover"></i>
                         </button>
                     </form>
                     <button class="ms-3"></button> 
                     <form class="bg-secondary b border border-5" action="{{route('admin.user.discharge')}}"  method="POST">
                         @csrf
-                        <input type="hidden" name="id_estado_cuenta" value="{{$usuario->id_estado_cuenta}}">
-                        @switch($usuario->id_estado_cuenta)
+                        <input type="hidden" name="estado_cuenta_id" value="{{$user->estado_cuenta_id}}">
+                        @switch($user->estado_cuenta_id)
                             @case(1)
-                                <button type="submit" name="id" class="btn btn-danger btn-sm me-auto" value="{{$usuario->id}}" title="Dar de baja a [{{strtoupper($usuario->usuario)}}]">
+                                <button type="submit" name="id" class="btn btn-danger btn-sm me-auto" value="{{$user->id}}" title="Dar de baja a [{{strtoupper($user->email)}}]">
                                     @break
                             @default
-                                <button type="submit" name="id" class="btn btn-success btn-sm me-auto" value="{{$usuario->id}}" title="Dar de alta a [{{strtoupper($usuario->usuario)}}]">
+                                <button type="submit" name="id" class="btn btn-success btn-sm me-auto" value="{{$user->id}}" title="Dar de alta a [{{strtoupper($user->email)}}]">
                                     @break
                         @endswitch
                             <i class="fas fa-user-times faa-passing	animated-hover"></i>
@@ -72,26 +70,26 @@
                     <button class="ms-3"></button> 
                     <!-- Button trigger modal -->
                     <form class="bg-secondary b border border-5">
-                        <button type="button" class="btn btn-dark btn-sm me-auto" title="Eliminar a [{{strtoupper($usuario->usuario)}}]" data-bs-toggle="modal" data-bs-target="#modal{{$usuario->id}}">
+                        <button type="button" class="btn btn-dark btn-sm me-auto" title="Eliminar a [{{strtoupper($user->email)}}]" data-bs-toggle="modal" data-bs-target="#modal{{$user->id}}">
                             <i class="fas fa-bomb faa-burst faa-fast animated-hover"></i>
                         </button>
                     </form>
                     <!-- Modal -->
-                    <div class="modal fade" id="modal{{$usuario->id}}" tabindex="-1" aria-labelledby="ModalLabel{{$usuario->id}}" aria-hidden="true">
+                    <div class="modal fade" id="modal{{$user->id}}" tabindex="-1" aria-labelledby="ModalLabel{{$user->id}}" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="ModalLabel{{$usuario->id}}">Confirmar eliminación del usuario: <b>{{$usuario->usuario}}</b></h5>
+                                    <h5 class="modal-title" id="ModalLabel{{$user->id}}">Confirmar eliminación del user: <b>{{$user->email}}</b></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    ¿Desea eliminar a <b>{{$usuario->nombre}} {{$usuario->apellido}}</b>?
+                                    ¿Desea eliminar a <b>{{$user->nombre}} {{$user->last_name}}</b>?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
                                     <form class="bg-secondary b border border-5" action="{{route('admin.user.delete')}}"  method="POST">
                                         @csrf
-                                        <button type="submit" class="btn btn-danger" name="id" value="{{$usuario->id}}">Eliminar</button>
+                                        <button type="submit" class="btn btn-danger" name="id" value="{{$user->id}}">Eliminar</button>
                                     </form>
                                 </div>
                             </div>
@@ -102,3 +100,7 @@
         </tr>
     @endforeach
 @endsection()
+
+@section('addCSS')
+    <link rel="stylesheet" href="/css/style.css" defer/>
+@stop

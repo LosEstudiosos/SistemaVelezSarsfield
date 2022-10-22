@@ -8,16 +8,16 @@
 
     <!-- v--Estilos--v -->
     <link href="/css/tailwind.min.css" rel="stylesheet"/>
-    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/all.css" rel="stylesheet"/>
-    <link href="/css/font-awesome-animation.min.css" rel="stylesheet"/>
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/font-awesome/all.css" rel="stylesheet"/>
+    <link href="/css/font-awesome/font-awesome-animation.min.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     
     <!-- ^--Estilos--^ -->
 
     <!-- v--JavaScripts--v -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
     <!-- ^--JavaScripts--^ -->
 
     <!-- v--Favicon--v -->

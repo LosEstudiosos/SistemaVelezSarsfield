@@ -14,13 +14,13 @@
                     <input size="4" class="border-3 b-i" type = "hidden" name="id" placeholder='Id' value="0"/>
                 </div>
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "text" name="nombre" placeholder='Nombre'/>
+                    <input class="form-control border-3 b-i" type = "text" name="name" placeholder='Nombre'/>
                 </div>
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "text" name="apellido" placeholder='Apellido'/>
+                    <input class="form-control border-3 b-i" type = "text" name="last_name" placeholder='Apellido'/>
                 </div>
                 <div class="col-6 mt-3">
-                    <input class="form-control border-3 b-i" type = "text" name="usuario" placeholder='Usuario'/>
+                    <input class="form-control border-3 b-i" type = "text" name="user" placeholder='Usuario'/>
                 </div>
                 <div class="col-6 mt-3">
                     <input class="form-control border-3 b-i" type = "password" name="password" placeholder='Contraseña'/>
@@ -96,4 +96,8 @@
         <a href="{{route('admin.user.list')}}" type="submit" class="text-dark btn btn-outline-info m-0">Volver</a>
     </div>
 </div>
+@stop
+
+@section('addCSS')
+    <link rel="stylesheet" href="/css/style.css" defer/>
 @stop
