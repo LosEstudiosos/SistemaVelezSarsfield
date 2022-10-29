@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Estado_Cuenta;
+use App\Models\User;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
@@ -13,18 +14,18 @@ class UsuariosController extends Controller
     }
 
     public function modificar($id){
-        $usuario = Usuario::where('id',$id)->get();
+        $usuario = User::where('id',$id)->get();
         return view('usuarios.modificar',compact('usuario'));
     }
 
     public function listar(){
-        $listaUsuarios = Usuario::all();
+        $listaUsuarios = User::all();
         $estados = Estado_Cuenta::all();
         return view('usuarios.listar',compact('listaUsuarios','estados'));
     }
 
     public function almacenar(Request $request){
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->email = $request->email;
@@ -36,7 +37,7 @@ class UsuariosController extends Controller
     }
 
     public function actualizar(Request $request){
-        Usuario::where('id',$request->id)
+        User::where('id',$request->id)
                     ->update(array(
                         'nombre'=>$request->nombre,
                         'apellido'=>$request->apellido,
@@ -49,12 +50,12 @@ class UsuariosController extends Controller
 
     public function altabaja(Request $request){
         if($request->id_estado_cuenta == 1)
-            Usuario::where('id',$request->id)
+            User::where('id',$request->id)
                         ->update(array(
                             'id_estado_cuenta'=>2
                         ));
         else
-            Usuario::where('id',$request->id)
+            User::where('id',$request->id)
                         ->update(array(
                             'id_estado_cuenta'=>1
                         ));
@@ -62,7 +63,9 @@ class UsuariosController extends Controller
     }
 
     public function borrar(Request $request){
-        Usuario::where('id',$request->id)->delete();
+        User::where('id',$request->id)->delete();
         return $this->listar();
     }
+
+
 }

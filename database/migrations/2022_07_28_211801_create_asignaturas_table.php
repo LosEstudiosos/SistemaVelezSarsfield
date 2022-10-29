@@ -18,12 +18,12 @@ class CreateAsignaturasTable extends Migration
 
             $table->string('asignatura',45);
             
-            $table->unsignedBigInteger('tipo_asignatura_id');
+            /* $table->unsignedBigInteger('tipo_asignatura_id'); */
 
-            $table->foreign('tipo_asignatura_id')
+            /* $table->foreign('tipo_asignatura_id')
                     ->references('id')
                     ->on('tipo_asignaturas')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade'); */
 
             $table->timestamps();
         });

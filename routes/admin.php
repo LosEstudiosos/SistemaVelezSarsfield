@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PermisoController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\MensajeriaController;
 use App\Models\Mensajeria;
@@ -10,6 +12,10 @@ use App\Models\Mensajeria;
 //use PHPJasper\PHPJasper;
 
 use Dompdf\Dompdf;
+
+
+Route::resource('user', UserController::class)->only(['index', 'edit', 'update'])->names('admin.users');
+Route::resource('permiso', PermisoController::class)->only(['index', 'edit', 'update'])->names('admin.permisos');
 
 Route::get('', [HomeController::class, 'index']);
 Route::get('calendar', [HomeController::class, 'calendar']);
