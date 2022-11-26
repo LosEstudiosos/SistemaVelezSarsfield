@@ -14,7 +14,7 @@ class RecordatorioController extends Controller
     }
 
     public function show(Recordatorio $Recordatorio){
-        $Recordatorio = Recordatorio::all();
+        $Recordatorio = Recordatorio::allData()->get();
         return response()->json($Recordatorio);
     }
 

@@ -18,22 +18,27 @@ class Tipo_recordatorioSeeder extends Seeder
         
         $Tipo_recordatorio = new Tipo_recordatorio();
         $Tipo_recordatorio->tipo = 'Entrevista';
+        $Tipo_recordatorio->eventColor = 'blue';
         $Tipo_recordatorio->save();
 
         $Tipo_recordatorio = new Tipo_recordatorio();
         $Tipo_recordatorio->tipo = 'Examen';
+        $Tipo_recordatorio->eventColor = 'red';
         $Tipo_recordatorio->save();
 
         $Tipo_recordatorio = new Tipo_recordatorio();
         $Tipo_recordatorio->tipo = 'Reunion de centro de estudiantes';
+        $Tipo_recordatorio->eventColor = 'yellow';
         $Tipo_recordatorio->save();
 
         $Tipo_recordatorio = new Tipo_recordatorio();
         $Tipo_recordatorio->tipo = 'Reunion de cooperadora';
+        $Tipo_recordatorio->eventColor = 'green';
         $Tipo_recordatorio->save();
 
         $Tipo_recordatorio = new Tipo_recordatorio();
         $Tipo_recordatorio->tipo = 'Reunion de padres';
+        $Tipo_recordatorio->eventColor = 'orange';
         $Tipo_recordatorio->save();
         
 

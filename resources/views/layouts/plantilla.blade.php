@@ -12,7 +12,6 @@
     <link href="/css/font-awesome/all.css" rel="stylesheet"/>
     <link href="/css/font-awesome/font-awesome-animation.min.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     
     <!-- ^--Estilos--^ -->
 
@@ -23,7 +22,7 @@
     <!-- v--JavaScripts--v -->
     
     <script src="/js/bootstrap/bootstrap.min.js"></script>
-    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/bootstrap/bootstrap.bundle.js"></script>
     <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
     <script src="{{ asset('js/calendar.js') }}" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

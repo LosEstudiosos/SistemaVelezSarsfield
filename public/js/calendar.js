@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
       formulario.reset();
       formulario.start.value=info.dateStr;
       formulario.end.value=info.dateStr;
+      //esconder y mostrar botones
+      formulario.getElementsByClassName("btn btn-success").btnGuardar.hidden = false;
+      formulario.getElementsByClassName("btn btn-warning").btnModificar.hidden = true;
+      formulario.getElementsByClassName("btn btn-danger").btnEliminar.hidden = true;
       $("#eventoCalendarioModal").modal("show");
     },
     eventClick:function(info){
@@ -30,17 +34,30 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById("end").value = evento.endStr.toString().substring(0, 10);
       document.getElementById("tipo_recordatorio_id").value = evento.extendedProps.tipo_recordatorio_id;
       document.getElementById("descripcion").value = evento.extendedProps.descripcion;
+      //esconder y mostrar botones
+      formulario.getElementsByClassName("btn btn-success").btnGuardar.hidden = true;
+      formulario.getElementsByClassName("btn btn-warning").btnModificar.hidden = false;
+      formulario.getElementsByClassName("btn btn-danger").btnEliminar.hidden = false;
       $("#eventoCalendarioModal").modal("show");
     }
 
   });
+
   calendar.render();
+
   document.getElementById("btnEliminar").addEventListener("click",function(){
     enviarDatos("/recordatorio/borrar/"+formulario.id.value);
   });
 
   document.getElementById("btnModificar").addEventListener("click",function(){
     enviarDatos("/recordatorio/actualizar");
+  });
+
+  $("#nuevoEvento").click(function(){
+    formulario.reset();
+    formulario.getElementsByClassName("btn btn-success").btnGuardar.hidden = false;
+    formulario.getElementsByClassName("btn btn-warning").btnModificar.hidden = true;
+    formulario.getElementsByClassName("btn btn-danger").btnEliminar.hidden = true;
   });
 
   function enviarDatos(url){

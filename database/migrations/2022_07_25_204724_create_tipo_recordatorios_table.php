@@ -16,6 +16,7 @@ class CreateTipoRecordatoriosTable extends Migration
         Schema::create('tipo_recordatorios', function (Blueprint $table) {
             $table->id();
             $table->string('tipo',45);
+            $table->string('eventColor',20);
 
             $table->timestamps();
         });

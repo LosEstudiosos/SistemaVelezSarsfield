@@ -12,7 +12,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-tittle">Nuevo recordatorio</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" >
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-gorup">
                         <label for="titulo">Titulo:</label>
-                        <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId">
+                        <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" required="1">
                     </div>
                     
                     {{-- <div class="form-gorup">
@@ -35,8 +35,8 @@
 
                     <div class="form-gorup">
                         <label for="titulo">Tipo recordatorio:</label>
-                        <select name="Tipo Usuario" class="form-select" id="tipo_recordatorio_id">
-                            <option selected disabled>Seleccionar</option>
+                        <select name="tipo_recordatorio_id" class="form-select" id="tipo_recordatorio_id" required="1">
+                            <option selected disabled value="">Seleccionar</option>
                             @foreach ($recordatorio as $item)
                                 <option value="{{ $item->id }}">{{ $item->tipo }}</option>
                             @endforeach
@@ -70,22 +70,22 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
-            <div class="sticky-top mb-3">
+        <div class="col-md-2">
+            <div class="sticky-top mb-2">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">PROBANDO</h3>
+                        <h3 class="card-title">Menu</h3>
                     </div>
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#eventoCalendarioModal">
-                        botn
+                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#eventoCalendarioModal" id="nuevoEvento">
+                        Nuevo evento
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.col -->
-        <div class="col-md-9">
+        <div class="col-md-10">  
             <div class="card card-primary">
                 <div class="card-body p-0">
                     <!-- THE CALENDAR -->
