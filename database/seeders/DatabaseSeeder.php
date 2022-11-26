@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tipo_recordatorio;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(InstanciaSeeder::class);
         $this->call(TipoMensajeriaSeeder::class);
         $this->call(MensajeriaSeeder::class);
+        $this->call(Tipo_recordatorioSeeder::class);
     }
 }

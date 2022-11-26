@@ -16,9 +16,10 @@ class CreateRecordatoriosTable extends Migration
     {
         Schema::create('recordatorios', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo',45);
+            $table->string('title',45);
             $table->string('descripcion',255);
-            $table->date('fecha');
+            $table->dateTime('start');//fecha inicio
+            $table->dateTime('end');//fecha fin
 
             $table->unsignedBigInteger('tipo_recordatorio_id');
             $table->unsignedBigInteger('user_id');

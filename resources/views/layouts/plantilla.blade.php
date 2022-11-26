@@ -16,8 +16,20 @@
     
     <!-- ^--Estilos--^ -->
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.js"></script>
+
     <!-- v--JavaScripts--v -->
+    
     <script src="/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
+    <script src="{{ asset('js/calendar.js') }}" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        var baseURL = {!! json_encode(url('/')) !!}
+    </script>
     <!-- ^--JavaScripts--^ -->
 
     <!-- v--Favicon--v -->
