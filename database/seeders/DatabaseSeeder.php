@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call(NacionalidadSeeder::class);
         $this->call(UsuarioSeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(TipoMensajeriaSeeder::class);
+        $this->call(TiposMensajeriaSeeder::class);
+        $this->call(MarcadorMensajeriasSeeder::class);
         $this->call(MensajeriaSeeder::class);
+        $this->call(UsersMensajeriasSeeder::class);
     }
 }

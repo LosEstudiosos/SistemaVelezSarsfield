@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\TiposMensajerias;
 use Illuminate\Database\Seeder;
 
-class TipoMensajeriaSeeder extends Seeder
+class TiposMensajeriaSeeder extends Seeder
 {
     /**
      * Run the database seeds.

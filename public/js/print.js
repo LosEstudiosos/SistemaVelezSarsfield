@@ -2,7 +2,7 @@ $(function () {
     $('#btnPrint').click(function() {
         $('#print-content').print({
         	globalStyles: true,
-        	mediaPrint: false,
+        	mediaPrint: false,	
         	stylesheet:  "/css/print.css",
         	noPrintSelector: ".no-print",
         	iframe: true,

@@ -31,3 +31,5 @@ Route::post('mail/save', [MensajeriaController::class, 'save'])->name('admin.mai
 Route::post('mail/send', [MensajeriaController::class, 'send'])->name('admin.mail.send');
 Route::post('mail/delete', [MensajeriaController::class, 'delete'])->name('admin.mail.delete');
 Route::post('mail/noted', [MensajeriaController::class, 'noted'])->name('admin.mail.noted');
+Route::get('mail/checkBorradores', [MensajeriaController::class, 'checkBorradores'])->name('admin.mail.checkBorradores');
+Route::get('mail/checkEnviados', [MensajeriaController::class, 'checkEnviados'])->name('admin.mail.checkEnviados');

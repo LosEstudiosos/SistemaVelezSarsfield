@@ -14,3 +14,6 @@ ul {
     list-style-type: lower-latin; 
     list-style-position: inside; 
  }
+.select2-selection__rendered{
+   display: inline-flex !important;
+}

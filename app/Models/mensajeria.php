@@ -17,9 +17,11 @@ class Mensajeria extends Model
      */
     public function scopeReceived($query)
     {
-        return $query->where('user_receptor_id','=' , auth()->id())
-                    ->where('borrador','=' , 0)
-                    ->where('eliminado','=' , 0);
+        return $query->join("users_mensajerias", "users_mensajerias.mensajeria_id", "=", "mensajerias.id")
+                    ->join("marcador_mensajerias", "marcador_mensajerias.id", "=", "users_mensajerias.marcador_id")
+                    ->where("marcador_mensajerias.posicion", "=", 'Bandeja de Entrada')
+                    ->where("users_mensajerias.user_id", "=", auth()->id())
+                    ->select("mensajerias.*", "users_mensajerias.leido", "users_mensajerias.destacado")->distinct(); 
     }
 
     /**
@@ -30,9 +32,11 @@ class Mensajeria extends Model
      */
     public function scopeSended($query)
     {
-        return $query->where('user_emisor_id','=' , auth()->id())
-                    ->where('borrador','=' , 0)
-                    ->where('eliminado','=' , 0);
+        return $query->join("users_mensajerias", "users_mensajerias.mensajeria_id", "=", "mensajerias.id")
+                    ->join("marcador_mensajerias", "marcador_mensajerias.id", "=", "users_mensajerias.marcador_id")
+                    ->where("marcador_mensajerias.posicion", "=", 'Bandeja de Salida')
+                    ->where("users_mensajerias.user_id", "=", auth()->id())
+                    ->select("mensajerias.*", "users_mensajerias.leido", "users_mensajerias.destacado")->distinct(); 
     }
     
     /**
@@ -43,9 +47,11 @@ class Mensajeria extends Model
      */
     public function scopeDrafted($query)
     {
-        return $query->where('user_emisor_id','=' , auth()->id())
-                    ->where('borrador','=' , 1)
-                    ->where('eliminado','=' , 0);
+        return $query->join("users_mensajerias", "users_mensajerias.mensajeria_id", "=", "mensajerias.id")
+                    ->join("marcador_mensajerias", "marcador_mensajerias.id", "=", "users_mensajerias.marcador_id")
+                    ->where("marcador_mensajerias.posicion", "=", 'Borradores')
+                    ->where("users_mensajerias.user_id", "=", auth()->id())
+                    ->select("mensajerias.*", "users_mensajerias.leido", "users_mensajerias.destacado")->distinct(); 
     }
 
     /**
@@ -56,16 +62,11 @@ class Mensajeria extends Model
      */
     public function scopeTrashed($query)
     {
-        return $query->where([
-                        ['user_emisor_id','=' , auth()->id()],
-                        ['borrador','=' , 0],
-                        ['eliminado','=' , 1]
-                    ])
-                    ->orWhere(function($query) {
-                        $query->where('user_receptor_id','=' , auth()->id())
-                                ->where('borrador','=' , 0)
-                                ->where('eliminado','=' , 1);
-                    });
+        return $query->join("users_mensajerias", "users_mensajerias.mensajeria_id", "=", "mensajerias.id")
+                    ->join("marcador_mensajerias", "marcador_mensajerias.id", "=", "users_mensajerias.marcador_id")
+                    ->where("marcador_mensajerias.posicion", "=", 'Papelera')
+                    ->where("users_mensajerias.user_id", "=", auth()->id())
+                    ->select("mensajerias.*", "users_mensajerias.leido", "users_mensajerias.destacado")->distinct(); 
     }
 
 }

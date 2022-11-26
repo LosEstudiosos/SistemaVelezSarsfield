@@ -16,6 +16,9 @@ php artisan make:factory [NombreObjeto]Factory --model=[NombreObjeto]
 Ejecuta un down() de todas las Migraciones existentes y luego ejecuta los Seeders
 php artisan migrate:fresh --seed
 
+Cancela las Migraciones ejecutadas
+php artisan migrate:rollback
+
 Pagina para installar Node.js y NPM
 https://nodejs.org/es/download/
 
@@ -42,3 +45,6 @@ php artisan make:livewire "nombre del componente"
 
 Ver todos los componentes de jetstream
 php artisan vendor:publish --tag=jetstream-views
+
+Actualiza los plugins instalados
+composer update
