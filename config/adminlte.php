@@ -372,7 +372,7 @@ return [
         [
             'text'       => 'PHPMyAdmin',
             'icon_color' => 'navy',
-            'url'        => 'phpmyadmin/index.php',
+            'url'        => 'http://127.0.0.1/phpmyadmin/index.php',
         ],
     ],
 

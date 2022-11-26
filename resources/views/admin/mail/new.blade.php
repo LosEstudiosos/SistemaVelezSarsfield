@@ -39,8 +39,8 @@ $userID = auth()->id();
     <div class="input-group-prepend">
       <label class="input-group-text" for="select2-dropdown-users">Para:</label>
     </div>
-    <select class="form-select custom-select" id="select2-dropdown-users" name="user_receptor" required="true" >
-      <option value="" selected disabled hidden>Seleccione el destinatario</option>
+    <select class="form-select custom-select" id="select2-dropdown-users" name="user_receptor[]" multiple required="true" >
+      <option value="" disabled hidden>Seleccione el destinatario</option>
         @foreach ($listUsers as $user)
           <option value="{{$user->id}}">{{$user->name}} {{$user->last_name}}</option>                  
         @endforeach

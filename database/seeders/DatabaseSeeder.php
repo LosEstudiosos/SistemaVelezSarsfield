@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(Estado_CuentaSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(TiposMensajeriaSeeder::class);
+        $this->call(MarcadorMensajeriasSeeder::class);
+        $this->call(MensajeriaSeeder::class);
+        $this->call(UsersMensajeriasSeeder::class);
         $this->call(SexoSeeder::class);
         $this->call(NacionalidadSeeder::class);
         $this->call(Temas_actaSeeder::class);
@@ -27,8 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CursoSeeder::class);
         $this->call(AlumnoSeeder::class);
         $this->call(InstanciaSeeder::class);
-        $this->call(TipoMensajeriaSeeder::class);
-        $this->call(MensajeriaSeeder::class);
         $this->call(Tipo_recordatorioSeeder::class);
     }
 }
