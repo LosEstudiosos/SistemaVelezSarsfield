@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-use App\Models\User;
+use App\Models\alumno;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
-class PermisoController extends Controller
+class CursoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +15,7 @@ class PermisoController extends Controller
      */
     public function index()
     {
-        return view('admin.permisos.index');
+        //
     }
 
     /**
@@ -48,22 +45,20 @@ class PermisoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    /* public function show($id)
     {
-        //
+        return 23;
     }
-
+ */
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( $role)
+    public function edit($id)
     {
-        $rol = Role::find($role);
-        $Permisos = Permission::all();
-        return view('admin.permisos.edit', compact('rol', 'Permisos'));
+        //
     }
 
     /**
@@ -73,16 +68,11 @@ class PermisoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $rol)
+    public function update(Request $request,alumno $alumno)
     {
-        
-        $role = Role::find($rol);
-        $permission = Permission::whereIn('id', $request->permisos)->get();
-        
-        $role->syncPermissions($permission); 
-
-
-        return redirect()->route('admin.permisos.edit', $rol)->with('info', 'Se asignaron los permisos correctamente');
+       
+        $alumno->curso()->attach($request->Datos);
+        return redirect()->route('admin.alumnos.edit', compact('alumno'));
     }
 
     /**

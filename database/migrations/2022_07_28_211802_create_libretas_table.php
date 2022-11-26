@@ -17,26 +17,26 @@ class CreateLibretasTable extends Migration
             $table->id();
 
             $table->double('calificacion');
-            $table->year('ciclo_lectivo');
+            /* $table->year('ciclo_lectivo'); */
 
-           /*  $table->unsignedBigInteger('alumno_id'); */
+           $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('asignatura_id');
-            $table->unsignedBigInteger('instancia_id');
+            /* $table->unsignedBigInteger('instancia_id'); */
 
-            /* $table->foreign('alumno_id')
+            $table->foreign('alumno_id')
                     ->references('id')
                     ->on('alumnos')
-                    ->onDelete('cascade'); */
+                    ->onDelete('cascade');
 
             $table->foreign('asignatura_id')
                     ->references('id')
                     ->on('asignaturas')
                     ->onDelete('cascade'); 
 
-            $table->foreign('instancia_id')
+            /* $table->foreign('instancia_id')
                     ->references('id')
                     ->on('instancias')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade'); */
 
             $table->timestamps();
         });

@@ -3,22 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-
-use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('admin.users.index');
+        return view('admin.roles.index');
     }
 
     /**
@@ -59,11 +57,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Role $role)
     {
-        
-        $Roles = Role::all();
-        return view('admin.users.edit', compact('user', 'Roles'));
+        $Permisos = Permission::all();
+
+        return view('admin.roles.edit', compact('role', 'Permisos'));
     }
 
     /**
@@ -73,12 +71,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Role $role)
     {
-       
-        $user->roles()->sync($request->roles);
+        
+        $role->permissions()->sync($request->permisos);
+        
 
-        return redirect()->route('admin.users.edit', $user)->with('info', 'Se asignaron los roles correctamente');
+        return redirect()->route('admin.roles.edit', $role)->with('info', 'Se asignaron los permisos correctamente');
     }
 
     /**

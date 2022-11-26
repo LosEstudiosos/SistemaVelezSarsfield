@@ -7,5 +7,5 @@
 @stop
 
 @section('content')
-    @livewire('admin.permisos-index')
+    @livewire('admin.roles-index')
 @stop

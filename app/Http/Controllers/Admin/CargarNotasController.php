@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-
+use App\Models\alumno;
+use App\Models\libreta;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
-class UserController extends Controller
+
+class CargarNotasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        return view('admin.cargarNotas.index');
     }
 
     /**
@@ -39,7 +39,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $libreta = new libreta();
+        $alumno = alumno::find($request->id);
+        $calificacion = $request->Notas;
+        /* $libreta->calificacion = $request->Notas;
+        $libreta->save(); */
+        $alumno->Asignaturas()->attach($request->Datos, ['calificacion' => $calificacion]);
+        return redirect()->route('admin.cargarNotas.vista');
     }
 
     /**
@@ -59,11 +65,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        
-        $Roles = Role::all();
-        return view('admin.users.edit', compact('user', 'Roles'));
+        //
     }
 
     /**
@@ -73,12 +77,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-       
-        $user->roles()->sync($request->roles);
-
-        return redirect()->route('admin.users.edit', $user)->with('info', 'Se asignaron los roles correctamente');
+        //
     }
 
     /**

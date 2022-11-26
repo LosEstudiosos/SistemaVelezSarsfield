@@ -45,7 +45,7 @@
     @yield('nav') 
 
     <!-- content -->
-    <div class=" mt-3 ">
+    <div class=" mt-3 row justify-content-center ">
         @yield('content')
     </div>
 

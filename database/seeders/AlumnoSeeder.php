@@ -34,7 +34,7 @@ class AlumnoSeeder extends Seeder
         $Alumno->user_id = 1;
         $Alumno->save();
 
-        alumno::factory(50)->create();
+        /* alumno::factory(50)->create(); */
     }
 }
 

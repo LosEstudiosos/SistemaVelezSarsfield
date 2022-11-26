@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-
+use App\Models\actas_reunione;
+use App\Models\alumno;
+use App\Models\clase;
+use App\Models\curso;
+use App\Models\tabla1;
+use App\Models\tabla2;
+use App\Models\temas_acta;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
-class UserController extends Controller
+class AlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        return view('admin.alumnos.index');
     }
 
     /**
@@ -28,7 +32,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -39,7 +42,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $alumno = new alumno();
+
+        $alumno->fecha_inscripcion = $request->fecha;
+        $alumno->user_id = $request->id;
+
+        $alumno->save();
+
+        return redirect()->route('admin.alumnos.index');
     }
 
     /**
@@ -48,9 +59,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user)
     {
-        //
+
+        return view('admin.alumnos.create', compact('user'));
     }
 
     /**
@@ -59,11 +71,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($user)
     {
-        
-        $Roles = Role::all();
-        return view('admin.users.edit', compact('user', 'Roles'));
+
+        return view('admin.alumnos.edit', compact('user'));
     }
 
     /**
@@ -73,12 +84,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request,  $user)
     {
-       
-        $user->roles()->sync($request->roles);
+        
 
-        return redirect()->route('admin.users.edit', $user)->with('info', 'Se asignaron los roles correctamente');
+        $alumno = User::find($user)->alumno->id;
+        
+
+        $Alumno = alumno::find($alumno);
+        $Curso = curso::find($request->Datos);
+        $Alumno->cursos()->sync($Curso); 
+
+        
+ 
+        return redirect()->route('admin.alumnos.index');
     }
 
     /**

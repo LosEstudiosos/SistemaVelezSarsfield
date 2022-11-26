@@ -263,9 +263,24 @@ return [
         ],
         [
             'text'        => 'Editar permisos',
-            'route'         => 'admin.permisos.index',
+            'route'         => 'admin.roles.index',
             'icon'        => 'far fa-users fa-fw ',
             'can'        => 'listarUsuarios',
+        ],
+        [
+            'text'        => 'Editar alumnos',
+            'route'         => 'admin.alumnos.index',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarUsuarios',
+        ],
+        [
+            'text'        => 'Cargar notas',
+            'route'         => 'admin.cargarNotas.index',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarUsuarios',
+        ],
+        [
+            'url'         => '/admin/verNotas',
         ],
         /* [
             'text'        => 'pages',

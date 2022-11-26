@@ -14,7 +14,7 @@ class CreateClasesTable extends Migration
     public function up()
     {
         Schema::create('clases', function (Blueprint $table) {
-            $table->string('ciclo_lectivo',45);
+            /* $table->string('ciclo_lectivo',45); */
             
             $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('curso_id');

@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 
 
-class PermisosIndex extends Component
+class RolesIndex extends Component
 {
     use WithPagination;
 
@@ -25,6 +25,6 @@ class PermisosIndex extends Component
                         ->orderBy($this->sort, $this->direction) */
                         ->paginate(9);
 
-        return view('livewire.admin.permisos-index', compact('roles'));
+        return view('livewire.admin.roles-index', compact('roles'));
     }
 }
