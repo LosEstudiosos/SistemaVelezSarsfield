@@ -14,14 +14,14 @@ class CreateLibretasTable extends Migration
     public function up()
     {
         Schema::create('libretas', function (Blueprint $table) {
+            $table->id();
+
             $table->double('calificacion');
-            $table->year('ciclo_lectivo');
+            /* $table->year('ciclo_lectivo'); */
 
-            $table->unsignedBigInteger('alumno_id');
+           $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('asignatura_id');
-            $table->unsignedBigInteger('instancia_id');
-
-            $table->primary(['alumno_id','asignatura_id']);
+            /* $table->unsignedBigInteger('instancia_id'); */
 
             $table->foreign('alumno_id')
                     ->references('id')
@@ -33,10 +33,10 @@ class CreateLibretasTable extends Migration
                     ->on('asignaturas')
                     ->onDelete('cascade'); 
 
-            $table->foreign('instancia_id')
+            /* $table->foreign('instancia_id')
                     ->references('id')
                     ->on('instancias')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade'); */
 
             $table->timestamps();
         });

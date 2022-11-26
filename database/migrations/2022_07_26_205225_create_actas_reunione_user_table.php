@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTemaActaReunionTable extends Migration
+class CreateActasReunioneUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateTemaActaReunionTable extends Migration
      */
     public function up()
     {
-        Schema::create('tema_acta_reunion', function (Blueprint $table) {
-            $table->unsignedBigInteger('acta_reunion_id')->nullable();
-            $table->unsignedBigInteger('tema_acta_id')->nullable();
+        Schema::create('actas_reunione_user', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('actas_reunione_id')->nullable();
 
-            $table->foreign('acta_reunion_id')
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('set null');
+            $table->foreign('actas_reunione_id')
                     ->references('id')
                     ->on('actas_reuniones')
-                    ->onDelete('set null');
-            $table->foreign('tema_acta_id')
-                    ->references('id')
-                    ->on('temas_actas')
                     ->onDelete('set null');
 
             $table->timestamps();
@@ -37,6 +37,6 @@ class CreateTemaActaReunionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tema_acta_reunion');
+        Schema::dropIfExists('actas_reunione_user');
     }
 }

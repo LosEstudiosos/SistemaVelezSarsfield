@@ -1,15 +1,31 @@
 <?php
 
+use App\Http\Controllers\Admin\AlumnoController;
+use App\Http\Controllers\Admin\CargaNotasController;
+use App\Http\Controllers\Admin\CargarNotasController;
+use App\Http\Controllers\Admin\CursoController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\HomeController;
+
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\MensajeriaController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UpdateController;
+use App\Http\Controllers\CalificacionesController;
 use App\Models\Mensajeria;
 //use JasperPHP\JasperPHP as JasperPHP;
 //use PHPJasper\PHPJasper;
 
 use Dompdf\Dompdf;
+
+
+Route::resource('user', UserController::class)->only(['index', 'edit', 'update'])->names('admin.users');
+Route::resource('roles', RoleController::class)->names('admin.roles');
+Route::resource('alumnos', AlumnoController::class)->names('admin.alumnos');
+Route::resource('cargarNotas', CargarNotasController::class)->names('admin.cargarNotas');
+
 
 Route::get('', [HomeController::class, 'index']);
 Route::get('calendar', [HomeController::class, 'calendar']);
@@ -33,3 +49,6 @@ Route::post('mail/delete', [MensajeriaController::class, 'delete'])->name('admin
 Route::post('mail/noted', [MensajeriaController::class, 'noted'])->name('admin.mail.noted');
 Route::get('mail/checkBorradores', [MensajeriaController::class, 'checkBorradores'])->name('admin.mail.checkBorradores');
 Route::get('mail/checkEnviados', [MensajeriaController::class, 'checkEnviados'])->name('admin.mail.checkEnviados');
+Route::get('cargaNotas', [CargaNotasController::class, 'cargaNotas'])->name('admin.cargarNotas');
+Route::put('verNotas', [CargaNotasController::class, 'verNotas'])->name('admin.cargarNotas.vista');
+Route::post('store', [CargaNotasController::class, 'store'])->name('admin.Cargar.store');

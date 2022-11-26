@@ -9,11 +9,13 @@ class actas_reunione extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['fecha_creacion', 'cuerpo', 'acuerdo'];
+
     public function users(){
         return $this->belongsToMany('App\Models\User');
     }
 
     public function temas_actas(){
         return $this->belongsToMany('App\Models\temas_acta');
-    }
+    } 
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClasesTable extends Migration
+class CreateTabla3sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,20 @@ class CreateClasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clases', function (Blueprint $table) {
-            $table->string('ciclo_lectivo',45);
-            
-            $table->unsignedBigInteger('alumno_id');
-            $table->unsignedBigInteger('curso_id');
+        Schema::create('tabla3s', function (Blueprint $table) {
+            $table->unsignedBigInteger('tabla1_id');
+            $table->unsignedBigInteger('tabla2_id');
 
-            $table->primary(['alumno_id','curso_id']);
+            $table->primary(['tabla1_id','tabla2_id']);
 
-            $table->foreign('alumno_id')
+            $table->foreign('tabla1_id')
                     ->references('id')
-                    ->on('alumnos')
+                    ->on('tabla1s')
                     ->onDelete('cascade');
 
-            $table->foreign('curso_id')
+            $table->foreign('tabla2_id')
                     ->references('id')
-                    ->on('cursos')
+                    ->on('tabla2s')
                     ->onDelete('cascade');
 
             $table->timestamps();
@@ -42,6 +40,6 @@ class CreateClasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clases');
+        Schema::dropIfExists('tabla3s');
     }
 }

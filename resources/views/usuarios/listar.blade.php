@@ -17,7 +17,7 @@
 @section('table_head')
     <tr class="table-dark">
         <th scope="col">ID</th>
-        <th scope="col">Nombre de usuario</th>
+        {{-- <th scope="col">Nombre de usuario</th> --}}
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
         <th scope="col">Email</th>
@@ -29,16 +29,17 @@
 @endsection()
 
 @section('table_body')
+        <td>dsd</td>
     @foreach ($listaUsuarios as $usuario)
         <tr scope="row">
             <td>{{$usuario->id}}</td>
-            <td>{{$usuario->usuario}}</td>
-            <td>{{$usuario->nombre}}</td>
+            {{-- <td>{{$usuario->usuario}}</td> --}}
+            <td>{{$usuario->name}}</td>
             <td>{{$usuario->apellido}}</td>
             <td>{{$usuario->email}}</td>
             <td>{{$usuario->created_at->format('d-m-Y')}}</td>
             <td>{{$usuario->updated_at->format('d-m-Y')}}</td>
-            @php $id = ($usuario->id_estado_cuenta) - 1 @endphp
+            @php $id = ($usuario->estado_cuenta_id) - 1 @endphp
             @switch($id)
                 @case(0)                                        
                 <td class="text-success text-uppercase">
@@ -58,7 +59,7 @@
                 <div class="btn-group" role="group">
                     <form class="bg-secondary b border border-5" action="{{route('usuarios.modificar',$usuario->id)}}"  method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-warning btn-sm" title="Modificar a [{{strtoupper($usuario->usuario)}}]">
+                        <button type="submit" class="btn btn-warning btn-sm" {{-- title="Modificar a [{{strtoupper($usuario->name)}}]" --}}>
                             <i class="fas fa-edit faa-wrench animated-hover"></i>
                         </button>
                     </form>

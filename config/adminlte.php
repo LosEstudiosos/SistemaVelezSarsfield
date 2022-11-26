@@ -250,23 +250,57 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'Editar usuarios',
+            'url'         => '/admin/usuarios',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarUsuarios',
+        ],
+        [
+            'text'        => 'Editar roles',
+            'route'         => 'admin.users.index',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarRoles',
+        ],
+        [
+            'text'        => 'Editar permisos',
+            'route'         => 'admin.roles.index',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarUsuarios',
+        ],
+        [
+            'text'        => 'Editar alumnos',
+            'route'         => 'admin.alumnos.index',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarUsuarios',
+        ],
+        [
+            'text'        => 'Cargar notas',
+            'route'         => 'admin.cargarNotas.index',
+            'icon'        => 'far fa-users fa-fw ',
+            'can'        => 'listarUsuarios',
+        ],
+        [
+            'url'         => '/admin/verNotas',
+        ],
+        /* [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
+        ], */
+
         ['header' => 'account_settings'],
-        [
+        /* [
             'text' => 'profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
+        ], */
+        /* [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
+        ], */
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
