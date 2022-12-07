@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  let formulario = document.querySelector("form");
+  let formulario = document.getElementById('formulario');
 
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar:{
       left:'prev,next today',
       center:'title',
-      right:'dayGridMonth'//,timeGridWeek,listWeek'
+      right:'timeGridWeek,dayGridMonth,listWeek'
     },
-    events:"/recordatorio/mostrar",
+    events:"/admin/calendario/mostrar",
     dateClick:function(info){
       formulario.reset();
       formulario.start.value=info.dateStr;
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 
   document.getElementById("btnEliminar").addEventListener("click",function(){
-    enviarDatos("/recordatorio/borrar/"+formulario.id.value);
+    enviarDatos("/admin/calendario/borrar/"+formulario.id.value);
   });
 
   document.getElementById("btnModificar").addEventListener("click",function(){
-    enviarDatos("/recordatorio/actualizar");
+    enviarDatos("/admin/calendario/actualizar");
   });
 
   $("#nuevoEvento").click(function(){

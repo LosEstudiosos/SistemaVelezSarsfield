@@ -30,11 +30,10 @@ Route::post('usuarios/almacenar', [UsuariosController::class, 'almacenar'])->nam
 Route::post('usuarios/modificar/{id}', [UsuariosController::class, 'modificar'])->name('usuarios.modificar');
 Route::post('usuarios/actualizar', [UsuariosController::class, 'actualizar'])->name('usuarios.update');
 Route::post('usuarios', [UsuariosController::class, 'altabaja'])->name('usuarios.altabaja');
-route::get('tabla1', [TableController::class, 'table'])->name('table');
-
+/*
 Route::get('/calendar', [ActasController::class, 'index']);
 Route::post('/calendar/agregar', [ActasController::class, 'store']);
-
+*/
 Route::get('/recordatorio', [RecordatorioController::class, 'index'])->name('recordatorios');
 Route::get('/recordatorio/mostrar', [RecordatorioController::class, 'show'])->name('recordatorio.mostrar');
 Route::post('/recordatorio/agregar', [RecordatorioController::class, 'store'])->name('recordatorio.save');
@@ -46,9 +45,12 @@ Route::post('/recordatorio/actualizar', [RecordatorioController::class, 'update'
 Route::post('usuarios/borrar', [UsuariosController::class, 'borrar'])->name('usuarios.borrar');
 Route::get('userRoles', [RolesController::class, 'users'])->name('userRoles');
 
-Route::get('/dashboard', function (){
+Route::get('/propuesta', function (){
     return view('dashboard');
-})->name('dashboard');
+})->name('propuesta');
+Route::get('/contacto', function (){
+    return view('contact');
+})->name('contacto');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/actas', [ActasController::class, 'index'])->name('actas');
 route::post('actas', [ActasController::class, 'store'])->name('actas.store');
@@ -68,5 +70,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/userRoles/{id}', [RolesCo
 Route::middleware(['auth:sanctum', 'verified'])->post('/userRoles/{id}', [RolesController::class, 'update'])->name('userRoles.update');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/tabla', Principal::class)->name('table');
-http://127.0.0.1:8000/css/app.css
+//http://127.0.0.1:8000/css/app.css
 
