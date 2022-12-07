@@ -230,6 +230,15 @@ return [
     'menu' => [
         // Navbar items:
         [
+          'type' => 'navbar-notification','id'           => 'my-notification',      // An ID attribute (required).
+          'icon'         => 'fas fa-bell',          // A font awesome icon (required).
+          'icon_color'   => 'warning',              // The initial icon color (optional).
+          'route'        => 'admin.mail.list.inbox',   // The url to access all notifications/elements (required).
+          'topnav_right' => true,                   // Or "topnav => true" to place on the left (required).
+          'dropdown_mode'   => true,                // Enables the dropdown mode (optional).
+          'dropdown_flabel' => 'Bandeja de Entrada', // The label for the dropdown footer link (optional).
+        ],
+        [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
@@ -276,7 +285,6 @@ return [
                             [
                                 'text'        => 'Ver notas',
                                 'icon'        => 'fas fa-search',
-                                'url'         => '/admin/verNotas',
                             ],
                         ],
         ],
@@ -358,6 +366,7 @@ return [
                     'route'  => 'admin.calendarios',
                 ],
             ],
+            'can'        => 'mostrarMensaje',
         ],
         ['header' => 'DATOS', 'key' => 'datos',    ],/*
         [

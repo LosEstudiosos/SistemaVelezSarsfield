@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="ml-lg-5 col-7 bg-white b border border-5 border-dark">
-        {{-- <form action="{{ route('admin.Cargar.store') }}" method="POST"> --}}
-            {!! Form::model($listar, ['route' => ['admin.cargarNotas.store'], 'method' => 'GET']) !!}
+         {{-- <form action="{{ route('admin.Cargar.store') }}" method="POST"> --}}
+             {!! Form::model($listar, ['route' => ['admin.cargarNotas.store'], 'method' => 'post']) !!} 
             <div class="row">
                 @csrf
                 <div class="col-12 d-flex justify-content-end mt-3">
@@ -70,23 +70,25 @@
                 <h4 class="col-6 text-center">Apellido y Nombre</h4>
                 <h4 class="col-6 text-center">Notas</h4>
                 @foreach ($listar as $item)
-                    
-                    <p class="col-6 text-left">{{$item->User->last_name}} {{$item->User->name}}
-                        <input size="4" class="border-3 b-i" type="text" name="id" placeholder='Id' value="{{ $item->id }}" />
-                    </p>
-                    <div class="col-6">
-                        <x-ingresonotas>Nota</x-ingresonotas>
-                    </div>
+
+                <p class="col-6 text-left">{{$item->User->last_name}} {{$item->User->name}}
+                    <input size="4" class="border-3 b-i" type="hidden" name="id" placeholder='Id'
+                        value="{{ $item->id }}" />
+                </p>
+                <div class="col-6">
+                    <x-ingresonotas>Nota</x-ingresonotas>
+                </div>
                 @endforeach
             </div>
 
             <div class="col-12 my-3 d-flex justify-content-center">
                 {{-- <button type="submit" class="btn bt-r btn-info">Guardar</button> --}}
-                {!! Form::submit('Guardar', ['class' => 'btn bt-r btn-info']) !!}
+                {!! Form::submit('Guardar', ['class' => 'btn bt-r btn-info']) !!} 
             </div>
+
             
         {{-- </form> --}}
-        {!! Form::close() !!}
+             {!! Form::close() !!} 
     </div>
     <div class="col-12 align-self-start text-center">
         <a href="/usuarios" type="submit" class="text-white btn btn-link m-0 bu">Volver</a>

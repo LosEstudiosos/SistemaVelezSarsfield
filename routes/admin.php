@@ -21,12 +21,10 @@ use App\Models\Mensajeria;
 
 use Dompdf\Dompdf;
 
-
 Route::resource('user', UserController::class)->only(['index', 'edit', 'update'])->names('admin.users');
 Route::resource('roles', RoleController::class)->names('admin.roles');
 Route::resource('alumnos', AlumnoController::class)->names('admin.alumnos');
 Route::resource('cargarNotas', CargarNotasController::class)->names('admin.cargarNotas');
-
 
 Route::get('', [HomeController::class, 'index']);
 Route::get('usuarios', [UsersController::class, 'list'])->name('admin.user.list');
@@ -50,9 +48,9 @@ Route::post('mail/noted', [MensajeriaController::class, 'noted'])->name('admin.m
 Route::get('mail/checkBorradores', [MensajeriaController::class, 'checkBorradores'])->name('admin.mail.checkBorradores');
 Route::get('mail/checkEnviados', [MensajeriaController::class, 'checkEnviados'])->name('admin.mail.checkEnviados');
 
-Route::get('cargaNotas', [CargaNotasController::class, 'cargaNotas'])->name('admin.cargarNotas');
-Route::put('verNotas', [CargaNotasController::class, 'verNotas'])->name('admin.cargarNotas.vista');
-Route::post('store', [CargaNotasController::class, 'store'])->name('admin.Cargar.store');
+/* Route::get('cargaNotas', [CargaNotasController::class, 'cargaNotas'])->name('admin.cargarNotas'); */
+Route::get('verNotas', [CargaNotasController::class, 'verNotas'])->name('admin.cargarNotas.vista');
+/* Route::post('store', [CargaNotasController::class, 'store'])->name('admin.Cargar.store');  */
 
 Route::get('calendario', [RecordatorioController::class, 'index'])->name('admin.calendarios');
 Route::get('calendario/mostrar', [RecordatorioController::class, 'show'])->name('admin.calendario.show');

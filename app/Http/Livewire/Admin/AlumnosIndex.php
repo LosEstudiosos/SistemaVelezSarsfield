@@ -11,6 +11,7 @@ class AlumnosIndex extends Component
 {
     use WithPagination;
 
+    public $Open = true;
     public $Buscar, $search;
 
     public function updatingSearch(){

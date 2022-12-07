@@ -39,7 +39,7 @@
 
                     <td class="px-6 py-4">{{ $user->id }}</td>
                     <td class="px-6 py-4">{{ $user->name }}</td>
-                    <td class="px-6 py-4">{{ $user->apellido }}</td>
+                    <td class="px-6 py-4">{{ $user->last_name }}</td>
                     <td class="px-6 py-4">{{ $user->dni }}</td>
                     <td class="px-6 py-4">{{ $user->email }}</td>
                     <td width="10px">

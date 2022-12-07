@@ -21,4 +21,8 @@ class alumno extends Model
         return $this->belongsToMany('App\Models\asignatura','libretas');
     }
     
+    public function Libretas(){
+        return $this->hasMany('App\Models\libreta');
+    }
+    
 }

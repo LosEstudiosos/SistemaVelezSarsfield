@@ -33,13 +33,17 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'editarUsuarios'])->syncRoles([$Role1, $Role2]);
         Permission::create(['name' => 'eliminarUsuarios'])->syncRoles([$Role1, $Role2]);
 
+        Permission::create(['name' => 'listarAlumnos'])->syncRoles([$Role1, $Role2]);
+        Permission::create(['name' => 'crearFechaInscripcion'])->syncRoles([$Role1, $Role2]);
+        Permission::create(['name' => 'asignarCurso'])->syncRoles([$Role1, $Role2]);
+
         Permission::create(['name' => 'cargarNotas'])->syncRoles([$Role1, $Role2, $Role4]);
         Permission::create(['name' => 'abrirInstancia'])->syncRoles([$Role1, $Role2]);
         Permission::create(['name' => 'cerrarInstancia'])->syncRoles([$Role1, $Role2]);
 
         Permission::create(['name' => 'mostrarCalificaciones'])->syncRoles([$Role1, $Role2, $Role3, $Role5]);
 
-        Permission::create(['name' => 'mostrarCalendario'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role6]);
+        Permission::create(['name' => 'mostrarCalendario'])->syncRoles([$Role1, $Role2, $Role3, $Role4,$Role5, $Role6]);
         Permission::create(['name' => 'crearEvento'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role6]);
         Permission::create(['name' => 'editarEvento'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role6]);
         Permission::create(['name' => 'eliminarEvento'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role6]);

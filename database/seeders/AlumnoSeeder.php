@@ -29,10 +29,10 @@ class AlumnoSeeder extends Seeder
         $Alumno->user_id = 4;
         $Alumno->save(); */
 
-        $Alumno = new alumno();
+        /* $Alumno = new alumno();
         $Alumno->fecha_inscripcion = '2022-3-14';
         $Alumno->user_id = 1;
-        $Alumno->save();
+        $Alumno->save(); */
 
         /* alumno::factory(50)->create(); */
     }

@@ -39,12 +39,13 @@ class CargarNotasController extends Controller
      */
     public function store(Request $request)
     {
-        $libreta = new libreta();
+        /* $libreta = new libreta(); */
         $alumno = alumno::find($request->id);
         $calificacion = $request->Notas;
         /* $libreta->calificacion = $request->Notas;
         $libreta->save(); */
-        $alumno->Asignaturas()->attach($request->Datos, ['calificacion' => $calificacion]);
+        /* $alumno->Asignaturas()->attach($request->Datos, ['calificacion' => $calificacion]); */
+        $alumno->Asignaturas()->sync([$request->Datos => ['calificacion' => $calificacion]]);
         return redirect()->route('admin.cargarNotas.vista');
     }
 
