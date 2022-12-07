@@ -1,7 +1,7 @@
 @extends('layouts.admin.template')
 
 @section('content_header')
-<h1>Actualizar a </h1>
+<h1> Carga de notas </h1>
 @stop
 
 @section('content')

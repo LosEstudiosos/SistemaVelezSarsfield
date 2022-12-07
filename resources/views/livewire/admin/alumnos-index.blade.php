@@ -47,11 +47,15 @@
                     <td class="px-6 py-4">{{ $user->email }}</td>
                     <td width="10px">
                         <a class="btn btn-danger {{-- bg-yellow-300 hover:bg-yellow-200 text-black font-bold py-2 px-4 rounded-full --}}"
-                            href="{{ route('admin.alumnos.show', $user) }}">Crear</a>
+                            href="{{ route('admin.alumnos.show', $user) }}">Inscripción</a>
                     </td>
                     <td width="10px">
                         <a class="btn btn-warning {{-- bg-yellow-300 hover:bg-yellow-200 text-black font-bold py-2 px-4 rounded-full --}}"
-                            href="{{ route('admin.alumnos.edit', $user) }}">Editar</a></td>
+                            href="{{ route('admin.alumnos.edit', $user) }}">Curso</a>
+                    </td>
+                    <td width="10px">
+                        @livewire('notas', ['user' => $user], key($user->id))
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

@@ -49,6 +49,6 @@ Route::post('mail/delete', [MensajeriaController::class, 'delete'])->name('admin
 Route::post('mail/noted', [MensajeriaController::class, 'noted'])->name('admin.mail.noted');
 Route::get('mail/checkBorradores', [MensajeriaController::class, 'checkBorradores'])->name('admin.mail.checkBorradores');
 Route::get('mail/checkEnviados', [MensajeriaController::class, 'checkEnviados'])->name('admin.mail.checkEnviados');
-Route::get('cargaNotas', [CargaNotasController::class, 'cargaNotas'])->name('admin.cargarNotas');
-Route::put('verNotas', [CargaNotasController::class, 'verNotas'])->name('admin.cargarNotas.vista');
-Route::post('store', [CargaNotasController::class, 'store'])->name('admin.Cargar.store');
+/* Route::get('cargaNotas', [CargaNotasController::class, 'cargaNotas'])->name('admin.cargarNotas'); */
+Route::get('verNotas', [CargaNotasController::class, 'verNotas'])->name('admin.cargarNotas.vista');
+/* Route::post('store', [CargaNotasController::class, 'store'])->name('admin.Cargar.store');  */

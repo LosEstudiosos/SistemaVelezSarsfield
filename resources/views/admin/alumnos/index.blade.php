@@ -3,9 +3,10 @@
 @section('title', 'Velez Sarsfield')
 
 @section('content_header')
-    <h1>Lista de usuarios</h1>
+    <h1>Lista de Alumnos</h1>
 @stop
 
 @section('content')
+
     @livewire('admin.alumnos-index')
 @stop

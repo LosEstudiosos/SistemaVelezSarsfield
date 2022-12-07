@@ -30,6 +30,7 @@ class CargaNotasController extends Controller
     public function verNotas(){
         /* $user = Auth::id();
         $notas = User::find($user);  */
-            return view('admin.cargarNotas.vista'/* , compact('notas') */);  
+        $listar = alumno::all();
+            return view('admin.cargarNotas.vista' , compact('listar') );  
     }
 }

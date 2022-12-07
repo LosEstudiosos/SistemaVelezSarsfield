@@ -265,7 +265,7 @@ return [
             'text'        => 'Editar permisos',
             'route'         => 'admin.roles.index',
             'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'listarUsuarios',
+            'can'        => 'listarRoles',
         ],
         [
             'text'        => 'Editar alumnos',
@@ -277,7 +277,7 @@ return [
             'text'        => 'Cargar notas',
             'route'         => 'admin.cargarNotas.index',
             'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'listarUsuarios',
+            'can'        => 'cargarNotas',
         ],
         [
             'url'         => '/admin/verNotas',
@@ -346,6 +346,7 @@ return [
                     ],
                 ],
             ],
+            'can'        => 'mostrarMensaje',
         ],
         ['header' => 'DATOS', 'key' => 'datos',    ],/*
         [
