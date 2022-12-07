@@ -230,9 +230,13 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+          'type' => 'navbar-notification','id'           => 'my-notification',      // An ID attribute (required).
+          'icon'         => 'fas fa-bell',          // A font awesome icon (required).
+          'icon_color'   => 'warning',              // The initial icon color (optional).
+          'route'        => 'admin.mail.list.inbox',   // The url to access all notifications/elements (required).
+          'topnav_right' => true,                   // Or "topnav => true" to place on the left (required).
+          'dropdown_mode'   => true,                // Enables the dropdown mode (optional).
+          'dropdown_flabel' => 'Bandeja de Entrada', // The label for the dropdown footer link (optional).
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -242,45 +246,47 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Buscar',
         ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        
         [
-            'text'        => 'Editar usuarios',
-            'url'         => '/admin/usuarios',
-            'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'listarUsuarios',
-        ],
-        [
-            'text'        => 'Editar roles',
-            'route'         => 'admin.users.index',
-            'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'listarRoles',
-        ],
-        [
-            'text'        => 'Editar permisos',
-            'route'         => 'admin.roles.index',
-            'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'listarRoles',
-        ],
-        [
-            'text'        => 'Editar alumnos',
-            'route'         => 'admin.alumnos.index',
-            'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'listarUsuarios',
-        ],
-        [
-            'text'        => 'Cargar notas',
-            'route'         => 'admin.cargarNotas.index',
-            'icon'        => 'far fa-users fa-fw ',
-            'can'        => 'cargarNotas',
-        ],
-        [
-            'url'         => '/admin/verNotas',
+            'text'    => 'Administracion',
+            'icon'    => 'fas fa-user-secret',
+            'submenu' => [
+                            [
+                                'text'        => 'Editar roles',
+                                'route'         => 'admin.users.index',
+                                'icon'        => 'fas fa-user-tag faa-wrench animated faa-slow',
+                                'can'        => 'listarRoles',
+                            ],
+                            [
+                                'text'        => 'Editar permisos',
+                                'route'         => 'admin.roles.index',
+                                'icon'        => 'fas fa-key faa-passing animated faa-slow',
+                                'can'        => 'listarUsuarios',
+                            ],
+                            [
+                                'text'        => 'Editar alumnos',
+                                'route'         => 'admin.alumnos.index',
+                                'icon'        => 'fas fa-user-graduate',
+                                'can'        => 'listarUsuarios',
+                            ],
+                            [
+                                'text'        => 'Cargar notas',
+                                'route'         => 'admin.cargarNotas.index',
+                                'icon'        => 'fas fa-spell-check',
+                                'can'        => 'listarUsuarios',
+                            ],
+                            [
+                                'text'        => 'Ver notas',
+                                'icon'        => 'fas fa-search',
+                            ],
+                        ],
         ],
         /* [
             'text'        => 'pages',
@@ -308,13 +314,16 @@ return [
                 [
                     'text'    => 'Usuarios',
                     'url'     => '#',
+                    'icon'    => 'fas fa-users',
                     'submenu' => [
                         [
                             'text' => 'Listar',
+                            'icon'    => 'fas fa-list',
                             'route'  => 'admin.user.list',
                         ],
                         [
                             'text' => 'Registrar',
+                            'icon'    => 'fas fa-registered',
                             'route'  => 'admin.user.new',
                         ],
                     ],
@@ -322,28 +331,39 @@ return [
                 [
                     'text'    => 'Mensajeria',
                     'url'     => '#',
+                    'icon'    => 'far fa-envelope',
                     'submenu' => [
                         [
                             'text' => 'Bandeja de Entrada',
+                            'icon'    => 'fas fa-inbox',
                             'route'  => 'admin.mail.list.inbox',
                         ],
                         [
                             'text' => 'Bandeja de Salida',
+                            'icon'    => 'fas fa-paper-plane',
                             'route'  => 'admin.mail.list.sent',
                         ],
                         [
                             'text' => 'Borradores',
+                            'icon'    => 'fas fa-file-alt',
                             'route'  => 'admin.mail.list.drafts',
                         ],
                         [
                             'text' => 'Borrados',
+                            'icon'    => 'fas fa-trash',
                             'route'  => 'admin.mail.list.trash',
                         ],
                         [
                             'text' => 'Nuevo',
+                            'icon'    => 'fas fa-pencil-alt',
                             'route'  => 'admin.mail.new',
                         ],
                     ],
+                ],
+                [
+                    'text' => 'Calendario',
+                    'icon'    => 'fas fa-calendar-alt',
+                    'route'  => 'admin.calendarios',
                 ],
             ],
             'can'        => 'mostrarMensaje',
@@ -361,6 +381,7 @@ return [
         ],*/
         [
             'text'       => 'Usuarios Conectados(1)',
+            'icon'       => 'fas fa-sign-in-alt',
             'icon_color' => 'success',
             'url'        => '#',
         ],
@@ -368,11 +389,13 @@ return [
         [
             'text'       => 'Log',
             'icon_color' => 'navy',
+            'icon'       => 'fas fa-history',
             'url'        => 'admin/log-viewer',
         ],
         [
             'text'       => 'PHPMyAdmin',
-            'icon_color' => 'navy',
+            'icon_color' => 'warning',
+            'icon'       => 'fas fa-database',
             'url'        => 'http://127.0.0.1/phpmyadmin/index.php',
         ],
     ],
@@ -637,6 +660,36 @@ return [
                     'asset' => true,
                     'location' => '/css/summernote/summernote-bs5.min.css',
                 ],
+            ],
+        ],
+        'FullCalendar' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/fullcalendar/main.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/fullcalendar/locales-all.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/axios.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/moment.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/css/fullcalendar/main.css',
+                ],                
             ],
         ],
     ],

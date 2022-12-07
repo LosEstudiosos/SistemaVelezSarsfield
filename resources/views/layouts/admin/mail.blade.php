@@ -35,7 +35,7 @@
             </li>
             <li class="nav-item">
               <a href="{{route('admin.mail.list.sent')}}" class="nav-link">
-                <i class="far fa-envelope"></i> Enviados
+                <i class="far fa-paper-plane"></i> Enviados
                 <span class="badge bg-purple float-right">{{$sent}}</span>
               </a>
             </li>

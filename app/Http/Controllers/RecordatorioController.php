@@ -10,7 +10,7 @@ class RecordatorioController extends Controller
 {
     public function index(){
         $recordatorio = Tipo_recordatorio::all();
-        return view('recordatorio.index',compact('recordatorio'));
+        return view('admin.calendar',compact('recordatorio'));
     }
 
     public function show(Recordatorio $Recordatorio){

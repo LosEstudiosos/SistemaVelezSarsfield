@@ -1,9 +1,10 @@
 <x-app-layout>
 
-    <div class=" mt-10 flex justify-center">
-        <img src="{{asset('img/imagen.png')}}" alt="">
+    <div class="flex justify-center">
+        <img src="{{asset('img/imagen.png')}}" id="bg" alt="">
     </div>
-    
+    <link href="/css/welcome.css" rel="stylesheet" defer/>
+
 </x-app-layout>
 {{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

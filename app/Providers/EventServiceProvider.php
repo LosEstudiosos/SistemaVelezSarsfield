@@ -35,6 +35,7 @@ class EventServiceProvider extends ServiceProvider
                 'text'          => 'Usuarios Registrados('. $val .')',
                 'icon_color'    => 'cyan',
                 'url'           => '#',
+                'icon'          => 'fas fa-sort-amount-up-alt',
                 'key'           => 'userCount',
             ]);
         });;

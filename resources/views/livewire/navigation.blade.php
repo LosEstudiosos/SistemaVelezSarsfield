@@ -1,37 +1,17 @@
 <div>
     @php
     $nav_links = [
-    [
-    'name' => 'dashboard',
-    'route' => route('dashboard'),
-    'active' => request()->routeIs('dashboard'),
-    ],
-    [
-    'name' => 'tabla',
-    'route' => route('table'),
-    'active' => request()->routeIs('table'),
-    ],
-    [
-    'name' => 'Actas de reunión',
-    'route' => route('actas'),
-    'active' => request()->routeIs('actas'),
-    ],
-    [
-    'name' => 'Comunicados',
-    'route' => route('comunicados'),
-    'active' => request()->routeIs('comunicados'),
-    ],
-
-    [
-    'name' => 'Lista de actas',
-    'route' => route('lista-actas'),
-    'active' => request()->routeIs('lista-actas'),
-    ],
-    [
-    'name' => 'Calificaciones',
-    'route' => route('calificaciones'),
-    'active' => request()->routeIs('calificaciones'),
-    ],
+        [
+            'name' => 'Propuesta Academica',
+            'route' => route('propuesta'),
+            'active' => request()->routeIs('propuesta'),
+        ],
+        
+        [
+            'name' => 'Contacto',
+            'route' => route('contacto'),
+            'active' => request()->routeIs('contacto'),
+        ],
     ];
     @endphp
     <!-- This example requires Tailwind CSS v2.0+ -->
@@ -75,7 +55,7 @@
                         <p class="font-sans text-white ml-4 text-center hidden lg:block">Velez Sarsfield</p>
                     </a>
                     <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
+                        <div class="flex space-x-4 py-5">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                                 aria-current="page">Dashboard</a> --}}
@@ -116,7 +96,7 @@
 
 
                     <!-- Profile dropdown -->
-                    <div class="ml-3 relative" x-data="{ open: false }">
+                    <div class="ml-3 relative" x-data="{ open: false }" id="userData">
                         <div>
                             <button x-on:click="open = true" type="button"
                                 class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -142,48 +122,44 @@
                             <!-- Active: "bg-gray-100", Not Active: "" -->
                             <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-0">Editar perfil</a>
-
+                            <!--
                             @hasanyrole('Admin|Directivo')
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Área personal</a>
                             @endhasanyrole
-
+                            -->
                             @hasrole('Admin')
-                            <a href="{{ route('admin.users.index') }}" class="block px-4 py-2 text-sm text-gray-700"
+                            <a href="{{ route('admin.user.list') }}" class="block px-4 py-2 text-sm text-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-1">Usuarios</a>
                             @endhasrole
 
                             @hasrole('Admin')
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="{{ route('admin.users.index') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Roles</a>
                             @endhasrole
 
                             @hasrole('Admin')
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="{{ route('admin.roles.index') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Permisos</a>
                             @endhasrole
 
                             @hasrole('Admin')
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="{{ route('admin.cargarNotas.index') }}"  class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Cargar notas</a>
                             @endhasrole
 
-                            @hasrole('Admin')
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Calendario</a>
-                            @endhasrole
-
-                            @hasrole('Admin')
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                
+                            <a href="{{ route('admin.mail.list.inbox') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Mensajeria</a>
-                            @endhasrole
 
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
                                 <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700"
                                     role="menuitem" tabindex="-1" id="user-menu-item-2"
-                                    @click.prevent="$root.submit();">Sign out</a>
+                                    @click.prevent="$root.submit();">Cerrar sesion</a>
                             </form>
 
                         </div>
@@ -192,9 +168,9 @@
                 @else
                 <div>
                     <a href="{{ route('login') }}"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Iniciar sesion</a>
                     <a href="{{ route('register') }}"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Registrarse</a>
                 </div>
 
                 @endauth

@@ -123,7 +123,6 @@
 @stop
 
 @section('addJS')
-    <script src="/js/fullcalendar/main.js"></script>
     <script src="/js/moment.js"></script>
     <script src="/js/mail.js" defer></script>    
 @stop

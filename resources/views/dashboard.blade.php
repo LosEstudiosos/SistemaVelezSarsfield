@@ -12,18 +12,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt at enim, quaerat
                         pariatn, officiis cumque corporis quae harum odit incidunt quibusdam.
                         Quod maxime a harum. </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt at enim, quaerat
-                        pariatur eligendi velit, sequi non, officiis cumque corporis quae harum odit incidunt quibusdam.
-                        Quod maxime a harum. </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt at enim, quaerat
-                        pariatur eligendi velit, sequi non, officiis cumque corporis quae harum odit incidunt quibusdam.
-                        Quod maxime a harum. </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt at enim, quaerat
-                        pariatur eligendi velit, sequi non, officiis cumque corporis quae harum odit incidunt quibusdam.
-                        Quod maxime a harum. </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt at enim, quaerat
-                        pariatur eligendi velit, sequi non, officiis cumque corporis quae harum odit incidunt quibusdam.
-                        Quod maxime a harum. </p>
                 </div>
             </div>
         </div>
