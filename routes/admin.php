@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\MensajeriaController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\LibretaController;
 use App\Http\Controllers\RecordatorioController;
 use App\Http\Controllers\Admin\UpdateController;
 use App\Http\Controllers\CalificacionesController;
@@ -58,3 +59,5 @@ Route::post('calendario/agregar', [RecordatorioController::class, 'store'])->nam
 Route::post('calendario/editar/{id}', [RecordatorioController::class, 'edit'])->name('admin.calendario.edit');
 Route::post('calendario/borrar/{id}', [RecordatorioController::class, 'destroy'])->name('admin.calendario.delete');
 Route::post('calendario/actualizar', [RecordatorioController::class, 'update'])->name('admin.calendario.update');
+
+Route::get('libreta', [LibretaController::class, 'index'])->name('admin.libreta');

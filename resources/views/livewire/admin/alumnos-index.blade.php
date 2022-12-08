@@ -54,6 +54,10 @@
                             href="{{ route('admin.alumnos.edit', $user) }}">Curso</a>
                     </td>
                     <td width="10px">
+                        <a class="btn btn-success {{-- bg-yellow-300 hover:bg-yellow-200 text-black font-bold py-2 px-4 rounded-full --}}"
+                            href="">Libreta</a>
+                    </td>
+                    <td width="10px">
                         @livewire('notas', ['user' => $user], key($user->id))
                     </td>
                 </tr>

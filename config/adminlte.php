@@ -365,6 +365,11 @@ return [
                     'icon'    => 'fas fa-calendar-alt',
                     'route'  => 'admin.calendarios',
                 ],
+                [
+                    'text' => 'Libreta',
+                    'icon'    => 'fas fa-table',
+                    'route'  => 'admin.libreta',
+                ],
             ],
             'can'        => 'mostrarMensaje',
         ],

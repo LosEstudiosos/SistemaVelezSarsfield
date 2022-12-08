@@ -19,10 +19,10 @@ class CreateLibretasTable extends Migration
             $table->double('calificacion');
             /* $table->year('ciclo_lectivo'); */
 
-           $table->unsignedBigInteger('alumno_id');
+            $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('asignatura_id');
             $table->unsignedBigInteger('ciclo_lectivo_id');
-            /* $table->unsignedBigInteger('instancia_id'); */
+            $table->unsignedBigInteger('instancia_id');
 
             $table->foreign('alumno_id')
                     ->references('id')
@@ -39,10 +39,10 @@ class CreateLibretasTable extends Migration
                     ->on('ciclo_lectivos')
                     ->onDelete('cascade');
 
-            /* $table->foreign('instancia_id')
+            $table->foreign('instancia_id')
                     ->references('id')
                     ->on('instancias')
-                    ->onDelete('cascade'); */
+                    ->onDelete('cascade');
 
             $table->timestamps();
         });
