@@ -1,5 +1,5 @@
 <div>
-    <select name="Datos" class="form-select" id="">
+    <select name="{{ $Datos }}" class="form-select" id="">
         <option selected disabled>{{ $slot }}</option>
         
     @foreach ($asignatura as $item)
@@ -12,12 +12,15 @@
         @switch($select)
             @case('asignatura')
                 <option value=" {{$item->id}} ">{{$item->asignatura}}</option>
-                @break
+            @break
             @case('curso')
                 <option value="{{$item->id}}">{{$item->anio}}{{$item->division}}</option>
-                @break
+            @break
             @case('instancias')
                 <option value="{{$item->id}}">{{$item->instancia}}</option>
+            @break
+            @case('cicloLectivo')
+                <option value="{{$item->id}}">{{$item->anio}}</option>
             @break
             
             @default

@@ -25,7 +25,7 @@
             </form> --}}
 
             {!! Form::model($user, ['route' => [$ruta, $user], 'method' => $metodo]) !!}
-            <input size="4" class="border-3 b-i" type="text" name="id" placeholder='Id' value="{{ $user }}" />
+            <input size="4" class="border-3 b-i" type="hidden" name="id" placeholder='Id' value="{{ $user }}" />
             <div class="row">
                 <label class="col-12 d-flex justify-content-end mt-3">
                     {{ $input }}

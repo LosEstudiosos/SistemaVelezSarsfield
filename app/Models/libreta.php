@@ -20,4 +20,9 @@ class libreta extends Model
     public function asignatura(){
         return $this->belongsTo('App\Models\asignatura');
     }
+
+    public function CicloLectivo(){
+        return $this->hasMany('App\Models\CicloLectivo');
+    }
+    
 }

@@ -16,7 +16,7 @@ class CreateAsignaturasCursosTable extends Migration
         Schema::create('asignaturas_cursos', function (Blueprint $table) {
             $table->id();
 
-            $table->year('ciclo_lectivo');
+            /* $table->year('ciclo_lectivo'); */
 
             $table->unsignedBigInteger('curso_id');
             $table->unsignedBigInteger('profesore_id');

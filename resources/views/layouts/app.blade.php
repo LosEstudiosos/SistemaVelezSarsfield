@@ -18,9 +18,8 @@
     @livewireStyles
 
     <!-- Scripts -->
-    
+    <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script> src="/js/calendar.js"</script>
 </head>
 
 <body class="font-sans antialiased">

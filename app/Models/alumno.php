@@ -24,5 +24,9 @@ class alumno extends Model
     public function Libretas(){
         return $this->hasMany('App\Models\libreta');
     }
+
+    public function CicloLectivo(){
+        return $this->belongsToMany('App\Models\CicloLectivo','libretas');
+    }
     
 }

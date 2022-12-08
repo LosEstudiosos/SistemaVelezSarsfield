@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Asignatura;
+use App\Models\CicloLectivo;
 use App\Models\Curso;
 use App\Models\Instancia;
 use Illuminate\View\Component;
@@ -12,6 +13,7 @@ class ingresoseleccionador extends Component
 {
     public $asignatura;
     public $select;
+    public $Datos;
 
     /**
      * Create a new component instance.
@@ -32,14 +34,23 @@ class ingresoseleccionador extends Component
             case 'asignatura':
                 $this->select = $select;
                 $this->asignatura = asignatura::all();
+                $this->Datos = 'asignatura';
+
                 break;
             case 'curso':
                 $this->select = $select;
                 $this->asignatura = Curso::all();
+                $this->Datos = 'curso';
                 break;
             case 'instancias':
                 $this->select = $select;
                 $this->asignatura = Instancia::all();
+                $this->Datos = 'instancias';
+                break;
+            case 'cicloLectivo':
+                $this->select = $select;
+                $this->asignatura = CicloLectivo::all();
+                $this->Datos = 'ciclolectivo';
                 break;
             default:
                 # code...

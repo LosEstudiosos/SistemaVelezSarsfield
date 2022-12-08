@@ -41,13 +41,13 @@
                     {{ $InputDos }}
                 </x-slot> --}}
                 <x-slot name="InputTres">
-                    <x-Ingresonotas>
-                        Seleccione año lectivo
-                    </x-Ingresonotas>
+                    <x-ingresoseleccionador select="cicloLectivo">
+                        Seleccione ciclo lectivo
+                    </x-ingresoseleccionador>
                 </x-slot>
                 <x-slot name="InputCuatro">
                     <x-ingresoseleccionador select="instancias">
-                        Seleccione Instancia
+                        Seleccione instancia
                     </x-ingresoseleccionador>
                 </x-slot>
                 <x-slot name="InputCinco">

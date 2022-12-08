@@ -21,6 +21,7 @@ class CreateLibretasTable extends Migration
 
            $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('asignatura_id');
+            $table->unsignedBigInteger('ciclo_lectivo_id');
             /* $table->unsignedBigInteger('instancia_id'); */
 
             $table->foreign('alumno_id')
@@ -32,6 +33,11 @@ class CreateLibretasTable extends Migration
                     ->references('id')
                     ->on('asignaturas')
                     ->onDelete('cascade'); 
+
+            $table->foreign('ciclo_lectivo_id')
+                    ->references('id')
+                    ->on('ciclo_lectivos')
+                    ->onDelete('cascade');
 
             /* $table->foreign('instancia_id')
                     ->references('id')
