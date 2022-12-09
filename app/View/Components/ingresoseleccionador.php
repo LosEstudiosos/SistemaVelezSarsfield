@@ -50,7 +50,7 @@ class ingresoseleccionador extends Component
             case 'cicloLectivo':
                 $this->select = $select;
                 $this->asignatura = CicloLectivo::all();
-                $this->Datos = 'ciclolectivo';
+                $this->Datos = 'cicloLectivo';
                 break;
             default:
                 # code...

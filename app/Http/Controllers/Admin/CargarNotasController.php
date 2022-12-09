@@ -59,6 +59,18 @@ class CargarNotasController extends Controller
         $alumno->CicloLectivo()->sync([$request->cicloLectivo => ['calificacion' => $calificacion]]);
         $alumno->Asignaturas()->sync([$request->asignatura => ['calificacion' => $calificacion]]);
         */
+
+        
+        /* $alumno = alumno::find($request->id);
+        $calificacion = $request->Notas;
+        $cicloLectivo = $request->cicloLectivo;
+        $instancia = $request->instancias;
+        return $request;
+        $alumno->Asignaturas()->attach([
+            1 => ['calificacion' => $calificacion, 'ciclo_lectivo_id' => $cicloLectivo, 'instancia_id' => $instancia],
+        ]); */
+        
+        
         return redirect()->route('admin.cargarNotas.vista');
     }
 

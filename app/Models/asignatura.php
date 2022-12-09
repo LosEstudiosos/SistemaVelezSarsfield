@@ -21,7 +21,7 @@ class asignatura extends Model
         return $this->belongsTo('App\Models\tipo_asignatura');
     }
 
-    public function Alumnos_A(){
+    public function Alumnos(){
         return $this->belongsToMany('App\Models\alumno', 'libretas');
     }
 }
