@@ -29,9 +29,10 @@ class DatabaseSeeder extends Seeder
         $this->call(Temas_actaSeeder::class);
         $this->call(AsignaturaSeeder::class);
         $this->call(CursoSeeder::class);
+        $this->call(CicloLectivoSeeder::class);
+        $this->call(RoleAlumnoSeeder::class);
         $this->call(AlumnoSeeder::class);
         $this->call(InstanciaSeeder::class);
         $this->call(Tipo_recordatorioSeeder::class);
-        $this->call(CicloLectivoSeeder::class);
     }
 }

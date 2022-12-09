@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    @livewire('admin.libreta-index')
+    @livewire('admin.libreta-index', ['id_alumno' => $id_alumno])
 @stop
 
 <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">-->

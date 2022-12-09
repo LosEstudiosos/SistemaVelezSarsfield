@@ -148,11 +148,16 @@
                                 id="user-menu-item-1">Cargar notas</a>
                             @endhasrole
 
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="{{ route('admin.calendarios') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Calendario</a>
-                                
+
                             <a href="{{ route('admin.mail.list.inbox') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Mensajeria</a>
+
+                            @hasrole('Alumno')
+                            <a href="{{ route('admin.libreta') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-1">Libreta</a>
+                            @endhasrole
 
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf

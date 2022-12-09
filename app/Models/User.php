@@ -89,8 +89,6 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\actas_reunione');
     }
 
-    
-
     public function alumno(){
         return $this->hasOne('App\Models\alumno');
     }
@@ -101,5 +99,21 @@ class User extends Authenticatable
 
     public function Recordatorios(){
         return $this->hasMany('App\Models\Recordatorio');
+    }
+
+    
+    /**
+     * Scope a query to only include mails to the User Logged.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUserIDAlumno($query)
+    {
+        return $query->join("model_has_roles", "model_has_roles.model_id", "=", "users.id")
+                    ->join("roles", "roles.id", "=", "model_has_roles.role_id")
+                    ->where("roles.name", "=", 'Alumno')
+                    ->where("model_has_roles.model_type", "=", "App\Models\User")
+                    ->select("users.id")->distinct(); 
     }
 }

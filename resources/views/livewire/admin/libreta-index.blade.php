@@ -33,13 +33,31 @@
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
                 <td class="px-6 py-4">{{$asignatura->asignatura}}</td>
-                <td class="px-6 py-4 text-center">10</td>
-                <td class="px-6 py-4 text-center">9</td>
-                <td class="px-6 py-4 text-center">8</td>
-                <td class="px-6 py-4 text-center">7</td>
-                <td class="px-6 py-4 text-center">6</td>
-                <td class="px-6 py-4 text-center">5</td>
-                <td class="px-6 py-4 text-center">4</td>
+                <td class="px-6 py-4 text-center">
+                    @foreach ($primerTrimestre as $nota)
+                        @if ($nota->asignatura_id === $asignatura->id)
+                            {{$nota->calificacion}}
+                        @endif
+                    @endforeach
+                </td>
+                <td class="px-6 py-4 text-center">
+                    @foreach ($segundoTrimestre as $nota)
+                        @if ($nota->asignatura_id === $asignatura->id)
+                            {{$nota->calificacion}}
+                        @endif
+                    @endforeach
+                </td>
+                <td class="px-6 py-4 text-center">
+                    @foreach ($tercerTrimestre as $nota)
+                        @if ($nota->asignatura_id === $asignatura->id)
+                            {{$nota->calificacion}}
+                        @endif
+                    @endforeach
+                </td>
+                <td class="px-6 py-4 text-center"></td>
+                <td class="px-6 py-4 text-center"></td>
+                <td class="px-6 py-4 text-center"></td>
+                <td class="px-6 py-4 text-center"></td>
             </tr>
             @endforeach
         </tbody>
