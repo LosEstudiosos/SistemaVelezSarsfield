@@ -1,6 +1,6 @@
 <div>
-    <select name="{{ $Datos }}" class="form-select" id="">
-        <option selected disabled>{{ $slot }}</option>
+    <select name="{{ $Datos }}" class="form-select" id="" required>
+        <option selected value="" disabled>{{ $slot }}</option>
         
     @foreach ($asignatura as $item)
 {{--             @if ($select=='asignatura')

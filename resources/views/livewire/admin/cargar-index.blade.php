@@ -33,7 +33,14 @@
                 </div>
             </div> --}}
 
-            <x-seleccionador clase="col-3 mt-3">
+            <div class="row mt-3">
+                <h6 class="col-3 text-center">Ciclo lectivo</h4>
+                <h6 class="col-3 text-center">Instancia</h4>
+                <h6 class="col-3 text-center">Año/división</h4>
+                <h6 class="col-3 text-center">Asignatura</h4>
+            </div>
+
+            <x-seleccionador clase="col-3 mb-5">
                 {{-- <x-slot name="InputUno">
                     {{ $InputUno }} Algo
                 </x-slot> --}}
@@ -65,7 +72,6 @@
                 </x-slot> --}}
             </x-seleccionador>
 
-
             <div class="row">
                 <h4 class="col-6 text-center">Apellido y Nombre</h4>
                 <h4 class="col-6 text-center">Notas</h4>
@@ -85,7 +91,6 @@
                 {{-- <button type="submit" class="btn bt-r btn-info">Guardar</button> --}}
                 {!! Form::submit('Guardar', ['class' => 'btn bt-r btn-info']) !!} 
             </div>
-
             
         {{-- </form> --}}
              {!! Form::close() !!} 
