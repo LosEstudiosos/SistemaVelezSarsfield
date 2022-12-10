@@ -47,7 +47,7 @@ class CargarNotasController extends Controller
         $libreta->alumno_id = $request->id;
         $libreta->calificacion = $request->Notas;
         $libreta->asignatura_id = $request->asignatura;
-        $libreta->ciclo_lectivo_id = $request->ciclolectivo;
+        $libreta->ciclo_lectivo_id = $request->cicloLectivo;
         $libreta->instancia_id = $request->instancias;
 
         $libreta->save();
