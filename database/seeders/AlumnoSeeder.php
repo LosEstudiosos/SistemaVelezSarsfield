@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\alumno;
+use App\Models\clase;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +24,10 @@ class AlumnoSeeder extends Seeder
             $Alumno->ciclo_lectivo_id = 1;
             $Alumno->user_id = $userID->id;
             $Alumno->save();
+            $clase = new clase();
+            $clase->alumno_id = $Alumno->id;
+            $clase->curso_id = 1;
+            $clase->save();
         }
         /*
         $Alumno = new alumno();

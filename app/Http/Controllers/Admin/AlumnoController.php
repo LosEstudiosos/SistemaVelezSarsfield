@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\actas_reunione;
+use App\Models\actas_reuniones;
 use App\Models\alumno;
 use App\Models\clase;
 use App\Models\curso;

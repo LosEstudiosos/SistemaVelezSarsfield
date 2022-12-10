@@ -7,14 +7,10 @@
 @stop
 
 @section('content')
-    @livewire('admin.libreta-index', ['id_alumno' => $id_alumno])
-@stop
-
-<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">-->
-@section('addCSS')
-
+    @livewire('admin.libreta-index', ['id_alumno' => $id_alumno, 'ciclo_lectivo_id' => $ciclo_lectivo_id])
 @stop
 
 @section('addJS')
-
+    <script src="/js/jquery-3.5.1.js" defer></script>
+    <script src="/js/libreta.js" defer></script>
 @stop

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\actas_reunione;
+use App\Models\actas_reuniones;
 use App\Models\alumno;
 use App\Models\asignatura;
 use App\Models\temas_acta;
@@ -25,18 +25,18 @@ class ActasController extends Controller
 
   public function list()
   {
-    $Actas = actas_reunione::all(); 
+    $Actas = actas_reuniones::all(); 
     /* $Temas = temas_acta::select('tema')->get(); */
-     /* $Temas = actas_reunione::find(1)->temas_actas()->get();  */
+     /* $Temas = actas_reuniones::find(1)->temas_actas()->get();  */
     return view('lista-actas', compact('Actas'));
-     /* return actas_reunione::find(2); */
+     /* return actas_reuniones::find(2); */
      
   }
 
   public function store(Request $request)
   {
     /*  return $request->all();  */
-    $Actas = new actas_reunione();
+    $Actas = new actas_reuniones();
 
     $Actas->fecha_creacion = $request->fecha;
     $Actas->cuerpo = json_encode($request->Participantes);

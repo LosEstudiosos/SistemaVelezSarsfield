@@ -60,4 +60,4 @@ Route::post('calendario/editar/{id}', [RecordatorioController::class, 'edit'])->
 Route::post('calendario/borrar/{id}', [RecordatorioController::class, 'destroy'])->name('admin.calendario.delete');
 Route::post('calendario/actualizar', [RecordatorioController::class, 'update'])->name('admin.calendario.update');
 
-Route::get('libreta/{id_alumno?}', [LibretaController::class, 'index'])->name('admin.libreta');
+Route::get('libreta/{id_alumno?}/{ciclo_lectivo_id?}', [LibretaController::class, 'index'])->name('admin.libreta');

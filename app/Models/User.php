@@ -86,7 +86,7 @@ class User extends Authenticatable
     }
 
     public function actas_reuniones(){
-        return $this->belongsToMany('App\Models\actas_reunione');
+        return $this->belongsToMany('App\Models\actas_reuniones');
     }
 
     public function alumno(){

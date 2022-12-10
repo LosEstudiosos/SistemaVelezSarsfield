@@ -43,14 +43,21 @@ class CargarNotasController extends Controller
         $alumno = alumno::find($request->id);
         $calificacion = $request->Notas;
 
-        $libreta = new libreta();
-        $libreta->alumno_id = $request->id;
-        $libreta->calificacion = $request->Notas;
-        $libreta->asignatura_id = $request->asignatura;
-        $libreta->ciclo_lectivo_id = $request->cicloLectivo;
-        $libreta->instancia_id = $request->instancias;
-
-        $libreta->save();
+        libreta::where('alumno_id', '=', $request->id)
+                ->where('asignatura_id', '=', $request->asignatura)
+                ->where('ciclo_lectivo_id', '=', $request->cicloLectivo)
+                ->where('instancia_id', '=', $request->instancias)
+                ->delete();
+        
+        if($request->Notas !== '11'){
+            $libreta = new libreta();
+            $libreta->alumno_id = $request->id;
+            $libreta->calificacion = $request->Notas;
+            $libreta->asignatura_id = $request->asignatura;
+            $libreta->ciclo_lectivo_id = $request->cicloLectivo;
+            $libreta->instancia_id = $request->instancias;
+            $libreta->save();
+        }
         
         
         /* $libreta->calificacion = $request->Notas;
@@ -71,7 +78,7 @@ class CargarNotasController extends Controller
         ]); */
         
         
-        return redirect()->route('admin.cargarNotas.vista');
+        return back();
     }
 
     /**

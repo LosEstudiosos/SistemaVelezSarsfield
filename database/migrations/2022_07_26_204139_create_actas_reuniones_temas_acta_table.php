@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActasReunioneUserTable extends Migration
+class CreateActasReunionesTemasActaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateActasReunioneUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('actas_reunione_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('actas_reunione_id')->nullable();
+        Schema::create('actas_reuniones_temas_acta', function (Blueprint $table) {
+            $table->unsignedBigInteger('actas_reuniones_id')->nullable();
+            $table->unsignedBigInteger('temas_acta_id')->nullable();
 
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('set null');
-            $table->foreign('actas_reunione_id')
+            $table->foreign('actas_reuniones_id')
                     ->references('id')
                     ->on('actas_reuniones')
+                    ->onDelete('set null');
+            $table->foreign('temas_acta_id')
+                    ->references('id')
+                    ->on('temas_actas')
                     ->onDelete('set null');
 
             $table->timestamps();
@@ -37,6 +37,6 @@ class CreateActasReunioneUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actas_reunione_user');
+        Schema::dropIfExists('actas_reuniones_temas_acta');
     }
 }

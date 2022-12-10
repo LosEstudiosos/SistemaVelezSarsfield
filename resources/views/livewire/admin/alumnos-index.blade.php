@@ -55,7 +55,7 @@
                     </td>
                     <td width="10px">
                         <a class="btn btn-success {{-- bg-yellow-300 hover:bg-yellow-200 text-black font-bold py-2 px-4 rounded-full --}}"
-                            href="{{route('admin.libreta', $user)}}">Libreta</a>
+                            href="{{route('admin.libreta',  ['id_alumno' => $user, 'ciclo_lectivo_id' => Null])}}">Libreta</a>
                     </td>
                     <td width="10px">
                         @livewire('notas', ['user' => $user], key($user->id))

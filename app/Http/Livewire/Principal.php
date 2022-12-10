@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\actas_reunione;
+use App\Models\actas_reuniones;
 use App\Models\Prueba;
 use Livewire\Component;
 use App\Models\Usuario;
@@ -27,16 +27,16 @@ class Principal extends Component
     {
         
 
-        /* $Actas = actas_reunione::all(); */
+        /* $Actas = actas_reuniones::all(); */
         /* $Temas = temas_acta::select('tema')->get(); */
-        /* $Temas = actas_reunione::find(1)->temas_actas()->get();  */
+        /* $Temas = actas_reuniones::find(1)->temas_actas()->get();  */
         /* foreach ($Actas as $Tema) {
-            $Temas = actas_reunione::find(1)->temas_actas()->get();
+            $Temas = actas_reuniones::find(1)->temas_actas()->get();
         } */
         /* return view('lista-actas', compact('Actas', 'Temas')); */
-        /* return actas_reunione::find(2); */
+        /* return actas_reuniones::find(2); */
 
-        /* $prueba = actas_reunione::all(); */
+        /* $prueba = actas_reuniones::all(); */
 
         $users = User::where('name', 'like', '%' . $this->search . '%')
                         /* ->orWhere('cuerpo', 'like', '%' . $this->search . '%')

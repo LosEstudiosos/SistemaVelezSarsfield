@@ -52,7 +52,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'crearMensaje'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role5, $Role6]);
         Permission::create(['name' => 'editarMensaje'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role5, $Role6]);
         Permission::create(['name' => 'eliminarMensaje'])->syncRoles([$Role1, $Role2, $Role3, $Role4, $Role5, $Role6]);
-        Permission::create(['name' => 'verLibretaPropia'])->syncRoles([$Role6]);
+        Permission::create(['name' => 'verLibretaPropia'])->syncRoles([$Role1, $Role6]);
         
     }
 }

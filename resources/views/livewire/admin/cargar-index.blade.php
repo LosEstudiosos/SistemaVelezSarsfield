@@ -34,13 +34,12 @@
             </div> --}}
 
             <div class="row mt-3">
-                <h6 class="col-3 text-center">Ciclo lectivo</h4>
-                <h6 class="col-3 text-center">Instancia</h4>
-                <h6 class="col-3 text-center">Año/división</h4>
-                <h6 class="col-3 text-center">Asignatura</h4>
+                <h6 class="col-4 text-center">Ciclo lectivo</h4>
+                <h6 class="col-4 text-center">Instancia</h4>
+                <h6 class="col-4 text-center">Asignatura</h4>
             </div>
 
-            <x-seleccionador clase="col-3 mb-5">
+            <x-seleccionador clase="col-4 mb-5">
                 {{-- <x-slot name="InputUno">
                     {{ $InputUno }} Algo
                 </x-slot> --}}
@@ -55,11 +54,6 @@
                 <x-slot name="InputCuatro">
                     <x-ingresoseleccionador select="instancias">
                         Seleccione instancia
-                    </x-ingresoseleccionador>
-                </x-slot>
-                <x-slot name="InputCinco">
-                    <x-ingresoseleccionador select="curso">
-                        Seleccione año/división
                     </x-ingresoseleccionador>
                 </x-slot>
                 <x-slot name="InputSeis">

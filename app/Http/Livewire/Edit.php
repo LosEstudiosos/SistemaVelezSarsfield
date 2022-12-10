@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\actas_reunione;
+use App\Models\actas_reuniones;
 use Livewire\Component;
 use App\Models\Prueba;
 
@@ -16,7 +16,7 @@ class Edit extends Component
         'user.content' => 'required',
     ];
 
-    public function mount(actas_reunione $user){
+    public function mount(actas_reuniones $user){
         $this->user = $user;
     }
 
