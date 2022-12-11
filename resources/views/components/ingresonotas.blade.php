@@ -1,6 +1,6 @@
 <div>
     <div>
-        <select name="Notas" class="form-select" id="" required>
+        <select name="Notas[]" class="form-select" id="" required>
             <option selected value="" disabled>{{ $slot }}</option>
             <option value="1">1</option>
             <option value="2">2</option>

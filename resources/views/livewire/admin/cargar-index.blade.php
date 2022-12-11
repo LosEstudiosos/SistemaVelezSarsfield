@@ -72,7 +72,7 @@
                 @foreach ($listar as $item)
 
                 <p class="col-6 text-left">{{$item->User->last_name}} {{$item->User->name}}
-                    <input size="4" class="border-3 b-i" type="hidden" name="id" placeholder='Id'
+                    <input size="4" class="border-3 b-i" type="hidden" name="user_id[]" placeholder='Id'
                         value="{{ $item->id }}" />
                 </p>
                 <div class="col-6">

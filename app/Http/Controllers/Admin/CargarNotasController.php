@@ -39,26 +39,31 @@ class CargarNotasController extends Controller
      */
     public function store(Request $request)
     {
-        /* $libreta = new libreta(); *///return $request;
-        $alumno = alumno::find($request->id);
-        $calificacion = $request->Notas;
+        /* $libreta = new libreta(); */;
+        
+        for ($i=0; $i < count($request->user_id); $i++) { 
 
-        libreta::where('alumno_id', '=', $request->id)
+        /* $alumno = alumno::find($request->user_id[$i]);
+        $calificacion = $request->Notas; */
+
+        libreta::where('alumno_id', '=', $request->user_id[$i])
                 ->where('asignatura_id', '=', $request->asignatura)
                 ->where('ciclo_lectivo_id', '=', $request->cicloLectivo)
                 ->where('instancia_id', '=', $request->instancias)
                 ->delete();
         
-        if($request->Notas !== '11'){
+            # code...
+        
+        if($request->Notas[$i] !== '11'){
             $libreta = new libreta();
-            $libreta->alumno_id = $request->id;
-            $libreta->calificacion = $request->Notas;
+            $libreta->alumno_id = $request->user_id[$i];
+            $libreta->calificacion = $request->Notas[$i];
             $libreta->asignatura_id = $request->asignatura;
             $libreta->ciclo_lectivo_id = $request->cicloLectivo;
             $libreta->instancia_id = $request->instancias;
             $libreta->save();
         }
-        
+        }
         
         /* $libreta->calificacion = $request->Notas;
         $libreta->save(); */
