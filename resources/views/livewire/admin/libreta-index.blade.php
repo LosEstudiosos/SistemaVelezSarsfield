@@ -1,7 +1,7 @@
-<div>      
+<div>
     <div class="flex">
-                <h2>Alumno: {{$nombre}}, Curso: {{$curso}}, en el Ciclo Lectivo {{$ciclo_lectivo}}</h2>
-                <button type="button" class="btn btn-default ml-auto" id="btnPrint" name="btnPrint"><i class="fas fa-print"></i> Imprimir</button>
+        <h2>Alumno: {{$nombre}}, Curso: {{$curso}}, en el Ciclo Lectivo {{$ciclo_lectivo}}</h2>
+        <button type="button" class="btn btn-default ml-auto" id="btnPrint" name="btnPrint"><i class="fas fa-print"></i> Imprimir</button>
     </div>
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -63,13 +63,15 @@
                         @if ($nota->asignatura_id === $asignatura->id)
                             {{$nota->calificacion}}
                         @endif
-                    @endforeach</td>
+                    @endforeach
+                </td>
                 <td class="px-6 text-center febrero">
                     @foreach ($febrero as $nota)
                         @if ($nota->asignatura_id === $asignatura->id)
                             {{$nota->calificacion}}
                         @endif
-                    @endforeach</td>
+                    @endforeach
+                </td>
                 <td class="px-6 text-center notafinal">-</td>
             </tr>
             @endforeach
