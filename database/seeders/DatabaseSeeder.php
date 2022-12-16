@@ -34,5 +34,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnoSeeder::class);
         $this->call(InstanciaSeeder::class);
         $this->call(Tipo_recordatorioSeeder::class);
+        $this->call(NotasSeeder::class);
     }
 }
