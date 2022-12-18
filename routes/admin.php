@@ -1,24 +1,33 @@
 <?php
 
+use App\Http\Controllers\Admin\AlumnoController;
+use App\Http\Controllers\Admin\CargaNotasController;
+use App\Http\Controllers\Admin\CargarNotasController;
+use App\Http\Controllers\Admin\CursoController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\Admin\PermisoController;
+
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\MensajeriaController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\LibretaController;
+use App\Http\Controllers\RecordatorioController;
+use App\Http\Controllers\Admin\UpdateController;
+use App\Http\Controllers\CalificacionesController;
 use App\Models\Mensajeria;
 //use JasperPHP\JasperPHP as JasperPHP;
 //use PHPJasper\PHPJasper;
 
 use Dompdf\Dompdf;
 
-
 Route::resource('user', UserController::class)->only(['index', 'edit', 'update'])->names('admin.users');
-Route::resource('permiso', PermisoController::class)->only(['index', 'edit', 'update'])->names('admin.permisos');
+Route::resource('roles', RoleController::class)->names('admin.roles');
+Route::resource('alumnos', AlumnoController::class)->names('admin.alumnos');
+Route::resource('cargarNotas', CargarNotasController::class)->names('admin.cargarNotas');
 
 Route::get('', [HomeController::class, 'index']);
-Route::get('calendar', [HomeController::class, 'calendar']);
 Route::get('usuarios', [UsersController::class, 'list'])->name('admin.user.list');
 Route::get('usuarios/registrar', [UsersController::class, 'new'])->name('admin.user.new');
 Route::post('usuarios/guardar', [UsersController::class, 'save'])->name('admin.user.save');
@@ -37,3 +46,18 @@ Route::post('mail/save', [MensajeriaController::class, 'save'])->name('admin.mai
 Route::post('mail/send', [MensajeriaController::class, 'send'])->name('admin.mail.send');
 Route::post('mail/delete', [MensajeriaController::class, 'delete'])->name('admin.mail.delete');
 Route::post('mail/noted', [MensajeriaController::class, 'noted'])->name('admin.mail.noted');
+Route::get('mail/checkBorradores', [MensajeriaController::class, 'checkBorradores'])->name('admin.mail.checkBorradores');
+Route::get('mail/checkEnviados', [MensajeriaController::class, 'checkEnviados'])->name('admin.mail.checkEnviados');
+
+/* Route::get('cargaNotas', [CargaNotasController::class, 'cargaNotas'])->name('admin.cargarNotas'); */
+Route::get('verNotas', [CargaNotasController::class, 'verNotas'])->name('admin.cargarNotas.vista');
+/* Route::post('store', [CargaNotasController::class, 'store'])->name('admin.Cargar.store');  */
+
+Route::get('calendario', [RecordatorioController::class, 'index'])->name('admin.calendarios');
+Route::get('calendario/mostrar', [RecordatorioController::class, 'show'])->name('admin.calendario.show');
+Route::post('calendario/agregar', [RecordatorioController::class, 'store'])->name('admin.calendario.save');
+Route::post('calendario/editar/{id}', [RecordatorioController::class, 'edit'])->name('admin.calendario.edit');
+Route::post('calendario/borrar/{id}', [RecordatorioController::class, 'destroy'])->name('admin.calendario.delete');
+Route::post('calendario/actualizar', [RecordatorioController::class, 'update'])->name('admin.calendario.update');
+
+Route::get('libreta/{id_alumno?}/{ciclo_lectivo_id?}', [LibretaController::class, 'index'])->name('admin.libreta');

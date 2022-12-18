@@ -59,13 +59,24 @@
             </form>
           </td>
           @php
-            $emisor = DB::table('users')
-              ->select('name')->where('id', $mensaje->user_emisor_id)
+ //         echo $mensaje->id;  
+            $emisorIDs = DB::table('users_mensajerias')->select('user_id')->where('mensajeria_id', $mensaje->id)->distinct()->get();
+            $list = [];
+            foreach ($emisorIDs as $id) {
+              array_push($list, $id->user_id);
+            }
+            $emisores = DB::table('users')
+              ->select('name')->whereIn('id', $list)
               ->get();
+            $list = [];
+            foreach ($emisores as $emisor) {
+              array_push($list, $emisor->name);
+            }
+            $list = implode(', ', $list);
           @endphp 
-          <td class="mailbox-name"><a href="{{route('admin.mail.read', $mensaje->id)}}">{{$emisor[0]->name}}</a></td>
+          <td class="mailbox-name"><a href="{{route('admin.mail.read', $mensaje->id)}}">{{$list}}</a></td>
           <td class="mailbox-subject"><b>{{$mensaje->titulo}}</b></td>
-          <td class="mailbox-date">{{$mensaje->fecha_edicion}}</td>
+          <td class="mailbox-date">{{$mensaje->created_at->format('d-m-Y')}}</td>
         </tr>
       @endforeach
       <!--
@@ -112,7 +123,6 @@
 @stop
 
 @section('addJS')
-    <script src="/js/fullcalendar/main.js"></script>
     <script src="/js/moment.js"></script>
     <script src="/js/mail.js" defer></script>    
 @stop

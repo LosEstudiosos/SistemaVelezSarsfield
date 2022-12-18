@@ -28,6 +28,7 @@ class CreateAlumnosTable extends Migration
             /* $table->unsignedBigInteger('estado_alumno_id');
             $table->unsignedBigInteger('sexo_id'); */
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('ciclo_lectivo_id')->nullable();
             /* $table->unsignedBigInteger('nacionalidad_id');
             $table->unsignedBigInteger('localidade_id'); */
 
@@ -44,6 +45,11 @@ class CreateAlumnosTable extends Migration
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
+                    ->onDelete('cascade');
+
+            $table->foreign('ciclo_lectivo_id')
+                    ->references('id')
+                    ->on('ciclo_lectivos')
                     ->onDelete('cascade');
 
             /* $table->foreign('nacionalidad_id')

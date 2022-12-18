@@ -3,9 +3,9 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Role;
-use App\Models\User as ModelsUser;
 use Livewire\Component;
 use Livewire\WithPagination;
+
 
 class PermisosIndex extends Component
 {

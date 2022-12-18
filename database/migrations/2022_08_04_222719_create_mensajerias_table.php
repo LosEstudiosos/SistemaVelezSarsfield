@@ -16,13 +16,12 @@ class CreateMensajeriasTable extends Migration
         Schema::create('mensajerias', function (Blueprint $table) {
             $table->id();
 
-            $table->string('titulo',45);
+            $table->string('titulo', 255);
             $table->text('cuerpo');
-
             $table->unsignedBigInteger('tipos_mensajeria_id');
             $table->unsignedBigInteger('respuesta_id')->nullable();
-            $table->unsignedBigInteger('user_emisor_id');
-            $table->unsignedBigInteger('user_receptor_id');
+            $table->unsignedBigInteger('user_autor_id');
+            $table->timestamps();
 
             $table->foreign('tipos_mensajeria_id')
                     ->references('id')
@@ -34,17 +33,11 @@ class CreateMensajeriasTable extends Migration
                     ->on('mensajerias')
                     ->onDelete('cascade');
 
-            $table->foreign('user_emisor_id')
+            $table->foreign('user_autor_id')
                     ->references('id')
                     ->on('users')
                     ->onDelete('cascade');
 
-            $table->foreign('user_receptor_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('cascade');
-
-            $table->timestamps();
         });
     }
 

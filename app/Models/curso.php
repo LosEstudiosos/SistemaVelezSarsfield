@@ -12,8 +12,4 @@ class curso extends Model
     public function alumnos(){
         return $this->belongsToMany('App\Models\alumno', 'clases');
     }
-
-    public function asignaturas_cursos(){
-        return $this->hasMany('App\Models\asignaturas_curso');
-    }
 }

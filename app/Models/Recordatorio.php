@@ -16,4 +16,12 @@ class Recordatorio extends Model
     public function Tipos_recordatorio(){
         return $this->belongsTo('App\Models\Tipo_recordatorio');
     }
+
+    public function scopeAllData($query){
+        return $query->join("tipo_recordatorios", "tipo_recordatorios.id", "=", "recordatorios.tipo_recordatorio_id")
+                    ->where("recordatorios.user_id", "=", auth()->id())
+                    ->select("recordatorios.*", "tipo_recordatorios.eventColor as color"); 
+    }
+    // recordatorios tipo_recordatorios
 }
+    

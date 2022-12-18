@@ -10,22 +10,22 @@
             @csrf 
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-label for="name" value="{{ __('Nombre') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="last_name" value="{{ __('last_name') }}" />
+                <x-jet-label for="last_name" value="{{ __('Apellido') }}" />
                 <x-jet-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required />
             </div> 
 
             <div class="mt-4">
                 <x-jet-label for="dni" value="{{ __('Dni') }}" />
-                <x-jet-input id="dni" class="block mt-1 w-full" type="text" name="documento" :value="old('dni')" required />
+                <x-jet-input id="dni" class="block mt-1 w-full" type="number" name="dni" min="0" :value="old('dni')" required />
             </div> 
 
             <div class="mt-4">
-                <x-jet-label for="estado_cuenta_id" value="{{ __('Estado') }}" />
+                <x-jet-label for="estado_cuenta_id" value="{{ __('Estado // Rol') }}" />
                 <select class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="estado_cuenta_id">
                     <option value="1">Estudiante</option>
                     <option value="2">Profesor</option>
@@ -57,7 +57,7 @@
                             <x-jet-checkbox name="terms" id="terms"/>
 
                             <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                {!! __('Acepto :terms_of_service y :privacy_policy', [
                                         'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
                                         'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
                                 ]) !!}

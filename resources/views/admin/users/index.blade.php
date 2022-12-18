@@ -3,7 +3,7 @@
 @section('title', 'Velez Sarsfield')
 
 @section('content_header')
-    <h1>Lista de usuarios</h1>
+    <h1>Asignar roles</h1>
 @stop
 
 @section('content')

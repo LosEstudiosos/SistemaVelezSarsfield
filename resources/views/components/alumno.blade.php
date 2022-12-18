@@ -2,7 +2,7 @@
     <h4 class="col-6 text-center">{{ $titulo1 }}</h4>
     <h4 class="col-6 text-center">{{ $titulo2 }}</h4>
     @foreach ($listar as $item)
-        <p class="col-6 text-center">{{$item->apellido}} {{$item->name}}</p>
+        <p class="col-6 text-left">{{$item->apellido}} {{$item->name}}</p>
         <div class="col-6">
             <x-ingresonotas>Nota</x-ingresonotas>
         </div>  

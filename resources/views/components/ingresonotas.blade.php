@@ -1,7 +1,7 @@
 <div>
     <div>
-        <select name="Tipo Usuario" class="form-select" id="">
-            <option selected disabled>{{ $slot }}</option>
+        <select name="Notas[]" class="form-select" id="" required>
+            <option selected value="" disabled>{{ $slot }}</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -12,7 +12,7 @@
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>
-    <option value="11">Eliminar Nota</option>
+            <option value="11">Eliminar Nota</option>
         </select>
     </div>
 </div>

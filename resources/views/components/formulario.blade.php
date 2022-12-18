@@ -5,20 +5,20 @@
     @section('title', 'Usuarios - Registrar')
 
     @section('header')
-        {{ $slot }}
+    {{ $slot }}
     @endsection()
 
     @section('content')
-        <div class="col-7 bg-white b border border-5 border-dark">
-            <form action="almacenar" method="POST">
+    <div class="row justify-content-center">
+        <div class="ml-lg-5 col-7 bg-white b border border-5 border-dark">
+            <form action="{{ route('admin.verNotas') }}" method="POST">
                 <div class="row">
                     @csrf
                     <div class="col-12 d-flex justify-content-end mt-3">
-                        <input size="4" class="border-3 b-i" type="hidden" name="id" placeholder='Id'
-                            value="0" />
+                        <input size="4" class="border-3 b-i" type="hidden" name="id" placeholder='Id' value="0" />
                     </div>
 
-{{--
+                    {{--
                     <div class="{{ $clase }}">
                         {{ $InputUno }}
                     </div>
@@ -43,11 +43,11 @@
                     </div>
                 </div> --}}
 
-                <x-seleccionador clase="col-3 mt-3" >
-{{--                     <x-slot name="InputUno">
+                <x-seleccionador clase="col-3 mt-3">
+                    {{-- <x-slot name="InputUno">
                         {{ $InputUno }} Algo
                     </x-slot> --}}
-{{--                     <x-slot name="InputDos">
+                    {{-- <x-slot name="InputDos">
                         {{ $InputDos }}
                     </x-slot> --}}
                     <x-slot name="InputTres">
@@ -56,9 +56,9 @@
                         </x-Ingresonotas>
                     </x-slot>
                     <x-slot name="InputCuatro">
-                         <x-ingresoseleccionador select="instancias">
+                        <x-ingresoseleccionador select="instancias">
                             Seleccione Instancia
-                        </x-ingresoseleccionador> 
+                        </x-ingresoseleccionador>
                     </x-slot>
                     <x-slot name="InputCinco">
                         <x-ingresoseleccionador select="curso">
@@ -71,12 +71,12 @@
                         </x-ingresoseleccionador>
                     </x-slot>
                     {{-- <x-slot name="boton"> --}}
-                {{--
+                        {{--
                     </x-slot> --}}
                 </x-seleccionador>
 
 
-                <x-alumno clase="bg" color="info" >
+                <x-alumno clase="bg" color="info">
                     <x-slot name="titulo1">
                         Apellido y Nombre
                     </x-slot>
@@ -93,5 +93,7 @@
         <div class="col-12 align-self-start text-center">
             <a href="/usuarios" type="submit" class="text-white btn btn-link m-0 bu">Volver</a>
         </div>
+    </div>
+
     @endsection()
 </div>

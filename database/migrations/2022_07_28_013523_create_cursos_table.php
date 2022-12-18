@@ -18,7 +18,7 @@ class CreateCursosTable extends Migration
 
             $table->integer('anio');
             $table->string('division',45);
-            
+
             $table->timestamps();
         });
     }
