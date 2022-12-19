@@ -57,7 +57,7 @@
 
         @foreach ($listar as $item)
             <tr scope="row">
-                
+
                 @if ($tipo == 'calificaciones')
                     <td> {{ $item->asignatura }} </td>
                 @else

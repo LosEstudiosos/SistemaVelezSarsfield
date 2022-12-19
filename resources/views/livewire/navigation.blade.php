@@ -6,7 +6,7 @@
             'route' => route('propuesta'),
             'active' => request()->routeIs('propuesta'),
         ],
-        
+
         [
             'name' => 'Contacto',
             'route' => route('contacto'),
@@ -26,9 +26,9 @@
                         <span class="sr-only">Open main menu</span>
                         <!--
                 Icon when menu is closed.
-    
+
                 Heroicon name: outline/menu
-    
+
                 Menu open: "hidden", Menu closed: "block"
                 -->
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -37,9 +37,9 @@
                         </svg>
                         <!--
                 Icon when menu is open.
-    
+
                 Heroicon name: outline/x
-    
+
                 Menu open: "block", Menu closed: "hidden"
                 -->
                         <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -108,7 +108,7 @@
 
                         <!--
                                                     Dropdown menu, show/hide based on menu state.
-                                        
+
                                                     Entering: "transition ease-out duration-100"
                                                         From: "transform opacity-0 scale-95"
                                                         To: "transform opacity-100 scale-100"
@@ -140,23 +140,38 @@
 
                             @hasrole('Admin')
                             <a href="{{ route('admin.roles.index') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Permisos</a>
+                                id="user-menu-item-2">Permisos</a>
                             @endhasrole
 
                             @hasrole('Admin')
                             <a href="{{ route('admin.cargarNotas.index') }}"  class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Cargar notas</a>
+                                id="user-menu-item-3">Cargar notas</a>
+                            @endhasrole
+
+                            @hasrole('Admin')
+                            <a href="#"  class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-4">Cargar Inasistencia</a>
+                            @endhasrole
+
+                            @hasrole('Admin')
+                            <a href="#"  class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-5">Cargar Actas de Reuniones</a>
                             @endhasrole
 
                             <a href="{{ route('admin.calendarios') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Calendario</a>
+                                id="user-menu-item-6">Calendario</a>
 
                             <a href="{{ route('admin.mail.list.inbox') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Mensajeria</a>
+                                id="user-menu-item-7">Mensajeria</a>
 
                             @hasrole('Alumno')
                             <a href="{{ route('admin.libreta') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Libreta</a>
+                                id="user-menu-item-8">Libreta</a>
+                            @endhasrole
+
+                            @hasrole('Alumno')
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-9">Asistencia</a>
                             @endhasrole
 
                             <form method="POST" action="{{ route('logout') }}" x-data>

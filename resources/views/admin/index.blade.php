@@ -3,11 +3,25 @@
 @section('title', 'Velez Sarsfield')
 
 @section('content_header')
-    <h1>Velez Sarsfield</h1>
+    <h1>Proyecto: Campus Virtual de la Escuela secundaria “Vélez Sarsfield”</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+
+      <ul class="list-group">
+        <h1>Profesores</h1>
+        <li class="list-group-item">Luis Magariños</li>
+        <li class="list-group-item">Nelson Benaventana</li>
+        <li class="list-group-item">Cristina Rodriguez</li>
+      </ul>
+      <hr class="border border-primary border-3 opacity-75">
+      <ul class="list-group">
+        <li class="list-group-item active">Integrantes</li>
+        <li class="list-group-item">Canet José Francisco</li>
+        <li class="list-group-item">Centurión Sebastián Ignacio</li>
+        <li class="list-group-item">Lapalma Santino Alexander</li>
+        <li class="list-group-item">Rodríguez Federico José</li>
+      </ul>
     <!--
     <div class="small-box bg-gradient-success">
         <div class="inner">

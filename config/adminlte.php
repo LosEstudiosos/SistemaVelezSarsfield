@@ -253,7 +253,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        
+
         [
             'text'    => 'Administracion',
             'icon'    => 'fas fa-user-secret',
@@ -274,19 +274,27 @@ return [
                             [
                                 'text'       => 'Editar alumnos',
                                 'route'      => 'admin.alumnos.index',
-                                'icon'       => 'fas fa-user-graduate',
+                                'icon'       => 'fas fa-user-graduate faa-wrench animated faa-slow',
                                 'can'        => 'listarUsuarios',
                             ],
                             [
                                 'text'       => 'Cargar notas',
                                 'route'      => 'admin.cargarNotas.index',
-                                'icon'       => 'fas fa-spell-check',
+                                'icon'       => 'fas fa-spell-check faa-wrench animated faa-slow',
                                 'can'        => 'listarUsuarios',
                             ],
                             [
-                                'text'        => 'Ver notas',
-                                'icon'        => 'fas fa-search',
+                                'text'       => 'Cargar Inasistencias',
+                                'icon'       => 'fas fa-calendar-check faa-wrench animated faa-slow',
+                                'url'        => '#',
+                                'can'        => 'listarUsuarios',
                             ],
+                            [
+                                'text'       => 'Cargar Acta de Reuniones',
+                                'icon'       => 'fas fa-book faa-wrench animated faa-slow',
+                                'url'        => '#',
+                                'can'        => 'listarUsuarios',
+                            ]
                         ],
         ],
         /* [
@@ -297,7 +305,7 @@ return [
             'label_color' => 'success',
         ], */
 
-        ['header' => 'account_settings'],
+        ['header' => 'ACCIONES'],
         /* [
             'text' => 'profile',
             'url'  => 'admin/settings',
@@ -370,7 +378,11 @@ return [
                     'text'      => 'Libreta',
                     'icon'      => 'fas fa-table',
                     'route'     => 'admin.libreta',
-                    'can'       => 'listarUsuarios',
+                ],
+                [
+                    'text'      => 'Asistencias',
+                    'icon'      => 'fas fa-check-double',
+                    'url'        => '#',
                 ],
             ],
             'can'        => 'mostrarMensaje',
@@ -404,6 +416,11 @@ return [
             'icon_color' => 'warning',
             'icon'       => 'fas fa-database',
             'url'        => 'http://127.0.0.1/phpmyadmin/index.php',
+        ],
+        [
+            'text'       => 'Volver al Inicio',
+            'icon'       => 'fas fa-home',
+            'url'        => '',
         ],
     ],
 
@@ -696,7 +713,7 @@ return [
                     'type' => 'css',
                     'asset' => true,
                     'location' => '/css/fullcalendar/main.css',
-                ],                
+                ],
             ],
         ],
     ],
